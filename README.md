@@ -19,7 +19,7 @@ y ejercicios</a>
 |---------------------------------------------------------------------------------------|----------|
 | Introducción                                                                          | [Clase 1](XS-0122_01.html)|
 | Métodos de Conteo                                                                     | [Clase 2](XS-0122_02.html) |
-| Práctica Métodos de Conteo                                                            | Clase 3   |
+| Práctica Métodos de Conteo                                                            | [Clase 3](XS-0122_03.html)  |
 | Desarrollo Axiomático + Probabilidad Condicional                                      | Clase 4   |
 | Probabilidad Condicional y Bayes + Variable Aleatoria                                 | Clase 5   |
 | Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | Clase 6  |

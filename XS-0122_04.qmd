@@ -1,22 +1,19 @@
 ---
 title: "Enfoque Axiomático"
 subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS3310-I25)"
-format: clean-revealjs
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-
-
-
+format:
+  clean-revealjs:
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+lang: es
 author:
   - name: Christopher Torres Rojas
     url: https://christopher-tr.github.io/
     email: christopher.torres@ucr.ac.cr
-    affiliations: 
-    - name: Escuela de Estadística, Universidad de Costa Rica
-      url: https://www.estadistica.ucr.ac.cr/
-#date: last-modified
-lang: es  # español
+    affiliations:
+      - name: Escuela de Estadística, Universidad de Costa Rica
+        url: https://www.estadistica.ucr.ac.cr/
 ---
 
 ## Axiomas

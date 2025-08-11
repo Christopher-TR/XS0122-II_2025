@@ -17,7 +17,7 @@ y ejercicios</a>
 
 | Tema                                                                                  | Clase    |
 |---------------------------------------------------------------------------------------|----------|
-| Introducción                                                                          | [Clase 1](XS0122-II_2025)  |
+| Introducción                                                                          | Clase 1 |
 | Métodos de Conteo                                                                     | Clase 2  |
 | Práctica Métodos de Conteo                                                            | Clase 3  |
 | Desarrollo Axiomático + Probabilidad Condicional                                      | Clase 4  |

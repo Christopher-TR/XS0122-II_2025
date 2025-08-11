@@ -18,10 +18,10 @@ y ejercicios</a>
 | Tema                                                                                  | Clase    |
 |---------------------------------------------------------------------------------------|----------|
 | Introducción                                                                          | [Clase 1](XS-0122_01.html)|
-| Métodos de Conteo                                                                     | Clase 2  |
-| Práctica Métodos de Conteo                                                            | Clase 3  |
-| Desarrollo Axiomático + Probabilidad Condicional                                      | Clase 4  |
-| Probabilidad Condicional y Bayes + Variable Aleatoria                                 | Clase 5  |
+| Métodos de Conteo                                                                     | [Clase 2](XS-0122_02.html)  |
+| Práctica Métodos de Conteo                                                            | [Clase 3](XS-0122_03.html)   |
+| Desarrollo Axiomático + Probabilidad Condicional                                      | [Clase 4](XS-0122_04.html)   |
+| Probabilidad Condicional y Bayes + Variable Aleatoria                                 | [Clase 5](XS-0122_05.html)   |
 | Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | Clase 6  |
 | Valor Esperado, Distribuciones Discretas                                              | Clase 7  |
 | Distribuciones Discretas                                                              | Clase 8  |

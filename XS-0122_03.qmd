@@ -22,9 +22,9 @@ A un jugador se le dan 13 cartas tomadas al azar de una baraja de 52 cartas. Enc
 
 a\) Solamente un as **(A)**:
 
-$\left|A\right| = {}_4C_1\cdot {}_{48}C_{12} \quad \text{ y }\quad\left|\Omega\right| = {}_{52}C_{13}$
+$\left|A\right| = \binom{4}{1}\cdot \binom{48}{12} \quad \text{ y }\quad\left|\Omega\right| = \binom{52}{13}$
 
-$P(A) = \frac{{}_4C_1\cdot {}_{48}C_{12}}{{}_{52}C_{13}} \approx 0.4388$
+$P(A) = \frac{\binom{4}{1}\cdot \binom{48}{12}}{\binom{52}{13}} \approx 0.4388$
 
 b\) Al menos un as **(B)**:
 
@@ -42,11 +42,11 @@ A un jugador se le dan 13 cartas tomadas al azar de una baraja de 52 cartas. Enc
 
 c\) El as de corazones **(C)**:
 
-$\left|C\right| = {}_1C_1\cdot {}_{51}C_{12}$
+$\left|C\right| = \binom{1}{1}\cdot \binom{51}{12}$
 
-$\left|\Omega\right| = {}_{52}C_{13}$
+$\left|\Omega\right| = \binom{52}{13}$
 
-$P(C) = \frac{{}_1C_1\cdot {}_{51}C_{12}}{{}_{52}C_{13}} = 0.25$
+$P(C) = 0.25$
 
 d\) Solamente un as y éste debe ser de corazones:
 
@@ -56,9 +56,9 @@ Considere un lote de 50 artículos de los cuales 5 son defectuosos, si se extrae
 
 a\) ¿Cuál es la probabilidad de que exactamente 2 sean defectuosos?
 
-$\left|A\right| = {}_5C_2\cdot {}_{45}C_{2} \quad \text{ y }\quad\left|\Omega\right| = {}_{50}C_{4}$
+$\left|A\right| = \binom{5}{2}\cdot \binom{45}{2} \quad \text{ y }\quad\left|\Omega\right| = \binom{50}{4}$
 
-$P(A) = \frac{{}_5C_2\cdot {}_{45}C_{2}}{{}_{50}C_{4}} \approx 0.043$
+$P(A) = \frac{\binom{5}{2}\cdot \binom{45}{2}}{\binom{50}{4}} \approx 0.043$
 
 b\) ¿Cuál es la probabilidad de que al menos 2 sean defectuosos?
 
@@ -68,7 +68,7 @@ a\) De cuantas maneras se pueden sentar 5 amigos en una banca de 5 asientos.
 
 b\) De cuantas maneras se pueden sentar 6 amigos en una banca de 5 asientos, pero Marta y Sara tienen que estar sentadas a la par.
 
-$\left|B\right| = {}_2P_2\cdot {}_{4}P_{3}\cdot4$
+$\left|B\right| = 2P2\cdot 4P3 \cdot4$
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="Explicación Gráfica"}
 knitr::include_graphics("images/PruebaPerm1.png")
@@ -102,7 +102,7 @@ Cuatro jugadores de tenis de igual habilidad (A, B, C, D) van a competir en un t
 \
 Considere $X = \text{Enfrentarse en la semifinal y sea } Y = \text{Enfrentarse en la final}$
 
-$X = \text{Enfrentarse en el primer partido } \cup \text{ Enfrentarse en el segundo partido}$$P(X) = \frac{{}_2C_2\cdot {}_2C_2}{ {}_4C_2\cdot{}_2C_2} + \frac{{}_2C_2\cdot {}_2C_2}{ {}_4C_2\cdot{}_2C_2} = \frac{1}{6}+\frac{1}{6}=\frac{1}{3}$
+$X = \text{Enfrentarse en el primer partido } \cup \text{ Enfrentarse en el segundo partido}$$P(X) = \frac{\binom{2}{2}\cdot \binom{2}{2}}{ \binom{4}{2}\cdot\binom{2}{2}} + \frac{\binom{2}{2}\cdot \binom{2}{2}}{ \binom{4}{2}\cdot\binom{2}{2}} = \frac{1}{6}+\frac{1}{6}=\frac{1}{3}$
 
 $Y = \text{No Enfrentase en la semifinal } \cap \text{ Que Tanto A y B ganen su partido}$$P(Y) = [1-P(X)]\cdot\frac{1}{2}\cdot\frac{1}{2} = \frac{2}{3} \cdot\frac{1}{2}\cdot\frac{1}{2} = \frac{1}{6}$
 

@@ -173,7 +173,7 @@ $M_2 = \text{La segunda selección es un libro de matemáticas}$
 
 $P(M_1\cap M_2) = P(M_2\mid M_1)\cdot P(M_1) = \frac{3}{9}\cdot \frac{4}{10} = \frac{2}{15} = 0.1333$\
 \
-Note que esto lo podríamos haber resuelto usando métodos de conteo: $\frac{{}_4C_2}{{}_{10}C_2} = \frac{2}{15}= 0.1333$
+Note que esto lo podríamos haber resuelto usando métodos de conteo: $\frac{\binom{4}{2}}{\binom{10}{2}} = \frac{2}{15}= 0.1333$
 
 ## Teorema 5.A
 

@@ -410,7 +410,7 @@
 </section>
 <section id="axiomas-para-probabilidades" class="slide level2">
 <h2>Axiomas (para probabilidades)</h2>
-<p>Sea <span class="math inline">\(\mathcal{A}\)</span> una <span class="math inline">\(\sigma-\text{álgebra en }\Omega.\)</span> Se define una probabilidad, o lo que es equivalente, una medida de probabilida sobre <span class="math inline">\(\Omega\)</span>, a la función:</p>
+<p>Sea <span class="math inline">\(\mathcal{A}\)</span> una <span class="math inline">\(\sigma-\text{álgebra en }\Omega.\)</span> Se define una probabilidad, o lo que es equivalente, una medida de probabilidad sobre <span class="math inline">\(\Omega\)</span>, a la función:</p>
 <p><span class="math display">\[
 P: \mathcal{A} \rightarrow \mathbb{R}
 \]</span></p>
@@ -425,23 +425,23 @@ P: \mathcal{A} \rightarrow \mathbb{R}
 </section>
 <section id="axiomas-propiedades-de-las-medidas-de-probabilidad" class="slide level2">
 <h2>Axiomas (Propiedades de las medidas de probabilidad)</h2>
-<h4 id="pemptyset-0."><strong>1)</strong> <span class="math inline">\(P(\emptyset) = 0.\)</span></h4>
+<p><strong>1)</strong> <span class="math inline">\(P(\emptyset) = 0.\)</span></p>
 <p><strong>Prueba:</strong> Considere que <span class="math inline">\(\Omega = \Omega \cup \emptyset\)</span></p>
 <p><span class="math inline">\(1=P(\Omega) = P(\Omega \cup \emptyset) = P(\Omega)+P(\emptyset) = 1 +P(\emptyset) \Rightarrow P(\emptyset) =0\)</span></p>
-<h4 id="si-a-cap-b-emptyset-es-cualquier-evento-entonces-pa-cup-b-pa-pb."><strong>2)</strong> Si <span class="math inline">\(A \cap B = \emptyset\)</span> es cualquier evento, entonces: <span class="math inline">\(P(A \cup B) = P(A) + P(B).\)</span></h4>
+<p><strong>2)</strong> Si <span class="math inline">\(A \cap B = \emptyset\)</span> es cualquier evento, entonces: <span class="math inline">\(P(A \cup B) = P(A) + P(B).\)</span></p>
 <p><strong>Prueba:</strong> Usando el axioma 6 y tomando <span class="math inline">\(A_1 = A\)</span> y <span class="math inline">\(A_2 = B\)</span> .</p>
-<h4 id="si-a-es-cualquier-evento-entonces-pac-1--pa."><strong>3)</strong> Si <span class="math inline">\(A\)</span> es cualquier evento, entonces: <span class="math inline">\(P(A^c) = 1- P(A).\)</span></h4>
+<p><strong>3)</strong> Si <span class="math inline">\(A\)</span> es cualquier evento, entonces: <span class="math inline">\(P(A^c) = 1- P(A).\)</span></p>
 <p><strong>Prueba:</strong> Considere que <span class="math inline">\(\Omega = A \cup A^c,\)</span> los cuales son eventos mutamentes disjuntos. Entonces:</p>
 <p><span class="math inline">\(1=P(\Omega) = P(A \cup A^c) = P(A)+P(A^c)\)</span></p>
 <p><span class="math inline">\(P(A^c) =1-P(A)\)</span></p>
 </section>
 <section id="axiomas-propiedades-de-las-medidas-de-probabilidad-1" class="slide level2">
 <h2>Axiomas (Propiedades de las medidas de probabilidad)</h2>
-<h4 id="si-a-y-b-son-eventos-entonces-pb-a-pacap-bc-pa---pacap-b.">4) Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos, entonces: <span class="math inline">\(P(B-A) = P(A\cap B^c) = P(A) - P(A\cap B).\)</span></h4>
+<p>4) Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos, entonces: <span class="math inline">\(P(B-A) = P(A\cap B^c) = P(A) - P(A\cap B).\)</span></p>
 <p><strong>Prueba:</strong> Ejercicio Note que <span class="math inline">\(\small A=(A\cap B^c) \cup (A\cap B)\)</span></p>
-<h4 id="si-a-y-b-son-eventos-tales-que-asubseteq-b-entonces-pb-a-pb---pa."><strong>5)</strong> Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos tales que, <span class="math inline">\(A\subseteq B\)</span>, entonces: <span class="math inline">\(P(B-A) = P(B) - P(A).\)</span></h4>
+<p><strong>5)</strong> Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos tales que, <span class="math inline">\(A\subseteq B\)</span>, entonces: <span class="math inline">\(P(B-A) = P(B) - P(A).\)</span></p>
 <p><strong>Prueba:</strong> Ejercicio. Sugerencia: si <span class="math inline">\(A\subseteq B,\)</span> entonces <span class="math inline">\(B=A\cup(A^c \cap B)\)</span></p>
-<h4 id="si-a-y-b-son-eventos-tales-que-asubseteq-b-entonces-pa-leq-pb"><strong>6)</strong> Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos tales que, <span class="math inline">\(A\subseteq B\)</span>, entonces: <span class="math inline">\(P(A) \leq P(B)\)</span></h4>
+<p><strong>6)</strong> Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos tales que, <span class="math inline">\(A\subseteq B\)</span>, entonces: <span class="math inline">\(P(A) \leq P(B)\)</span></p>
 <p><strong>Prueba:</strong> Ejercicio.</p>
 </section>
 <section id="axiomas-6" class="slide level2">
@@ -453,7 +453,7 @@ P: \mathcal{A} \rightarrow \mathbb{R}
 <p><span class="math display">\[
 P(X)=\frac{\mid A \mid}{\mid \Omega \mid}
 \]</span></p>
-<p>definida por <span class="math inline">\(P: \mathcal{P}(\Omega) \rightarrow \mathbb{R}^+\cup\{0\},\)</span> se conoce como <strong><em>Ley de Laplace.</em></strong></p>
+<p>definida por <span class="math inline">\(P: \mathcal{P}(\Omega) \rightarrow \mathbb{R}^{+}\cup\{0\},\)</span> se conoce como <strong><em>Ley de Laplace.</em></strong></p>
 </section>
 <section id="ley-aditiva-de-la-probabilidad" class="slide level2">
 <h2>Ley Aditiva de la Probabilidad</h2>

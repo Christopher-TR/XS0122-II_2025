@@ -106,7 +106,7 @@ A la dupla $(\Omega, \mathcal{A})$ se le llama espacio medidible si $\Omega \ne 
 
 ## Axiomas (para probabilidades)
 
-Sea $\mathcal{A}$ una $\sigma-\text{álgebra en }\Omega.$ Se define una probabilidad, o lo que es equivalente, una medida de probabilida sobre $\Omega$, a la función:
+Sea $\mathcal{A}$ una $\sigma-\text{álgebra en }\Omega.$ Se define una probabilidad, o lo que es equivalente, una medida de probabilidad sobre $\Omega$, a la función:
 
 $$
 P: \mathcal{A} \rightarrow \mathbb{R}
@@ -126,17 +126,17 @@ La cual corresponde a una serie convergente (debido al axioma 5).
 
 ## Axiomas (Propiedades de las medidas de probabilidad)
 
-#### **1)** $P(\emptyset) = 0.$
+**1)** $P(\emptyset) = 0.$
 
 **Prueba:** Considere que $\Omega = \Omega \cup \emptyset$
 
 $1=P(\Omega) = P(\Omega \cup \emptyset) = P(\Omega)+P(\emptyset) = 1 +P(\emptyset) \Rightarrow P(\emptyset) =0$
 
-#### **2)** Si $A \cap B = \emptyset$ es cualquier evento, entonces: $P(A \cup B) = P(A) + P(B).$
+**2)** Si $A \cap B = \emptyset$ es cualquier evento, entonces: $P(A \cup B) = P(A) + P(B).$
 
 **Prueba:** Usando el axioma 6 y tomando $A_1 = A$ y $A_2 = B$ .
 
-#### **3)** Si $A$ es cualquier evento, entonces: $P(A^c) = 1- P(A).$
+**3)** Si $A$ es cualquier evento, entonces: $P(A^c) = 1- P(A).$
 
 **Prueba:** Considere que $\Omega = A \cup A^c,$ los cuales son eventos mutamentes disjuntos. Entonces:
 
@@ -146,15 +146,15 @@ $P(A^c) =1-P(A)$
 
 ## Axiomas (Propiedades de las medidas de probabilidad)
 
-#### 4) Si $A$ y $B$ son eventos, entonces: $P(B-A) = P(A\cap B^c) = P(A) - P(A\cap B).$
+4\) Si $A$ y $B$ son eventos, entonces: $P(B-A) = P(A\cap B^c) = P(A) - P(A\cap B).$
 
 **Prueba:** Ejercicio Note que $\small A=(A\cap B^c) \cup (A\cap B)$
 
-#### **5)** Si $A$ y $B$ son eventos tales que, $A\subseteq B$, entonces: $P(B-A) = P(B) - P(A).$
+**5)** Si $A$ y $B$ son eventos tales que, $A\subseteq B$, entonces: $P(B-A) = P(B) - P(A).$
 
 **Prueba:** Ejercicio. Sugerencia: si $A\subseteq B,$ entonces $B=A\cup(A^c \cap B)$
 
-#### **6)** Si $A$ y $B$ son eventos tales que, $A\subseteq B$, entonces: $P(A) \leq P(B)$
+**6)** Si $A$ y $B$ son eventos tales que, $A\subseteq B$, entonces: $P(A) \leq P(B)$
 
 **Prueba:** Ejercicio.
 
@@ -172,7 +172,7 @@ $$
 P(X)=\frac{\mid A \mid}{\mid \Omega \mid}
 $$
 
-definida por $P: \mathcal{P}(\Omega) \rightarrow \mathbb{R}^+\cup\{0\},$ se conoce como ***Ley de Laplace.***
+definida por $P: \mathcal{P}(\Omega) \rightarrow \mathbb{R}^{+}\cup\{0\},$ se conoce como ***Ley de Laplace.***
 
 ## Ley Aditiva de la Probabilidad
 

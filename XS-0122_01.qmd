@@ -1,6 +1,6 @@
 ---
 title: "Introducción^1^"
-subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS3310-I25)"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025]( https://christopher-tr.github.io/XS0122-II_2025/)"
 format: clean-revealjs
 html-math-method:
   method: mathjax

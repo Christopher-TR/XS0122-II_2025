@@ -49,7 +49,7 @@ $$
 Todas los resultados (o eventos) posteriores se calibran entonces con respecto a su relación con $B$.
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="Probabilidad Condicional"}
-knitr::include_graphics("images/PbCondicional1.png")
+knitr::include_graphics("figs/PbCondicional1.png")
 ```
 
 ## Probabilidad Condicional
@@ -220,7 +220,7 @@ $$
 ## Probabilidad Total
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="Partición de Omega"}
-knitr::include_graphics("images/pbtotal1.png")
+knitr::include_graphics("figs/pbtotal1.png")
 ```
 
 ## Teorema de Probabilidad Total
@@ -246,7 +246,7 @@ $= \sum_{i=1}^{k} {P(A\mid B_i)\cdot P(B_i)}$
 ## Teorema de Probabilidad Total
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="Probabilidad Total"}
-knitr::include_graphics("images/pbtotal2.png")
+knitr::include_graphics("figs/pbtotal2.png")
 ```
 
 ## Teorema de Probabilidad Total (Ejemplo)

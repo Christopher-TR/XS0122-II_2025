@@ -71,7 +71,7 @@ b\) De cuantas maneras se pueden sentar 6 amigos en una banca de 5 asientos, per
 $\left|B\right| = 2P2\cdot 4P3 \cdot4$
 
 ```{r, echo=FALSE, out.width="100%", fig.cap="Explicación Gráfica"}
-knitr::include_graphics("images/PruebaPerm1.png")
+knitr::include_graphics("figs/PruebaPerm1.png")
 ```
 
 ## Ejercicios:

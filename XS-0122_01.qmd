@@ -1,6 +1,6 @@
 ---
 title: "Introducción^1^"
-subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025]( https://christopher-tr.github.io/XS0122-II_2025/)"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
 format: clean-revealjs
 html-math-method:
   method: mathjax
@@ -21,9 +21,10 @@ lang: es  # español
 -   **Información importante**
 
     1.  [Mediación Virtual](https://mv1.mediacionvirtual.ucr.ac.cr/course/view.php?id=39199)
-    2.  [Programa del curso](https://shuwei325.github.io/XS3310-I25/Programa-XS3310.pdf)
-    3.  [Llenar el formulario (pendiente)](https://forms.gle/6r7XSi5EwSYdrk8D6)
-    4.  [Slack](https://join.slack.com/t/teora-i25/shared_invite/zt-31gwglhsw-5lBmkz6AAndLf4kCgQIfsg)
+
+    2.  [Programa del curso](https://christopher-tr.github.io/XS0122-II_2025/XS-0122%20carta%20al%20estudiante.pdf)
+
+    3.  [Llenar el formulario (pendiente)](https://docs.google.com/forms/d/e/1FAIpQLSdgFSfxnOi0x5OVJxdc85JVQRHa9dVdupvOzxTt5xzpocuNVQ/viewform)
 
 -   **Reglamentación**
 

@@ -22,7 +22,7 @@ y ejercicios</a>
 | Práctica Métodos de Conteo                                                            | [Clase 3](XS-0122_03.html)  |
 | Desarrollo Axiomático + Probabilidad Condicional                                      | [Clase 4](XS-0122_04.html)  |
 | Probabilidad Condicional y Bayes + Variable Aleatoria                                 | [Clase 5](XS-0122_05.html)  |
-| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | Clase 6  |
+| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 6](XS-0122_06.html)  |
 | Valor Esperado, Distribuciones Discretas                                              | Clase 7  |
 | Distribuciones Discretas                                                              | Clase 8  |
 | Aproximaciones y Repaso de Integración                                                | Clase 9  |

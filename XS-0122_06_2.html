@@ -364,16 +364,16 @@ P(X \ge a)=\int_{a}^{+\infty} f_X(x)\,dx
 <section id="variable-aleatoria-continua-1" class="slide level2">
 <h2>Variable Aleatoria continua</h2>
 <h3 id="propiedades-de-la-densidad"><strong>Propiedades de la densidad</strong></h3>
-<p>Sea <span class="math inline">\(f_X:\mathbb{R}\to\mathbb{R}\)</span>. Es una <strong>densidad</strong> de una v.a. continua <span class="math inline">\(X\)</span> si y solo si:</p>
+<p>Sea <span class="math inline">\(f_X:R\to R\)</span>. Es una <strong>densidad</strong> de una v.a. continua <span class="math inline">\(X\)</span> si y solo si:</p>
 <ol type="1">
-<li><p><span class="math display">\[f_X(x)\ge 0,\ \forall x\in\mathbb{R}\]</span></p></li>
+<li><p><span class="math display">\[f_X(x)\ge 0,\ \forall x\in R\]</span></p></li>
 <li><p><span class="math display">\[\int_{-\infty}^{+\infty} f_X(x)\,dx = 1\]</span></p></li>
 </ol>
 </section>
 <section id="variable-aleatoria-continua-2" class="slide level2">
 <h2>Variable Aleatoria continua</h2>
 <h3 id="función-de-distribución-acumulada">Función de distribución acumulada (**)</h3>
-<p>Sea <span class="math inline">\(X\)</span> una v.a.c. con densidad <span class="math inline">\(f_X\)</span>. La función <span class="math inline">\(F_X:\mathbb{R}\to\mathbb{R}\)</span> dada por</p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a.c. con densidad <span class="math inline">\(f_X\)</span>. La función <span class="math inline">\(F_X:R \Rightarrow R\)</span> dada por</p>
 <p><span class="math display">\[
 F_X(x)=P(X\le x)=\int_{-\infty}^{x} f_X(t)\,dt
 \]</span></p>
@@ -388,11 +388,11 @@ F_X(x)=P(X\le x)=\int_{-\infty}^{x} f_X(t)\,dt
 <h2>Variable Aleatoria continua</h2>
 <h3 id="propiedades-de-la-función-de-distribución">Propiedades de la función de distribución:</h3>
 <ol type="1">
-<li><span class="math inline">\(F_X(x)\ge 0,\ \forall x\in\mathbb{R}\)</span><br>
+<li><span class="math inline">\(F_X(x)\ge 0,\ \forall x\in R\)</span><br>
 </li>
 <li>Si <span class="math inline">\(x\le y\)</span>, entonces <span class="math inline">\(F_X(x)\le F_X(y)\)</span> (es creciente).<br>
 </li>
-<li><span class="math inline">\(P(X&gt; x)=1-P(X\le x),\quad \forall x\in\mathbb{R}\)</span></li>
+<li><span class="math inline">\(P(X&gt; x)=1-P(X\le x),\quad \forall x\in R\)</span></li>
 <li><span class="math inline">\(P(a\le X\le b)=\int_{a}^{b} f_X(x)\,dx\)</span></li>
 <li><span class="math inline">\(\lim_{x\to -\infty}F_X(x)=0,\qquad \lim_{x\to +\infty}F_X(x)=1\)</span></li>
 </ol>
@@ -567,7 +567,7 @@ P(Y \leq \varphi_{0.5}) = \int_{-\infty}^{\varphi_{0.5}} f(y)\,dy
 <h2>Ejercicio</h2>
 <p>Sea <span class="math inline">\(X\)</span> una variable aleatoria con densidad</p>
 <p><span class="math display">\[
-f_X(x)=
+\small f_X(x)=
 \begin{cases}
 \dfrac{k}{9}, &amp; 1\le x\le 2,\\\\
 \dfrac{kx}{6}-1, &amp; 2&lt; x\le 3,\\\\
@@ -575,10 +575,10 @@ f_X(x)=
 \end{cases}
 \]</span></p>
 <p><strong>a)</strong> Determine el valor de <span class="math inline">\(k\)</span>.</p>
-<p><strong>b)</strong> Calcule <span class="math inline">\(P\!\left(\dfrac{3}{2} &lt; X &lt; \dfrac{5}{2}\right)\)</span>.</p>
-<p><strong>c)</strong> Obtenga <span class="math inline">\(F_X(x)\)</span>.</p>
-<p><strong>d)</strong> Calcule <span class="math inline">\(E(X)\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span>.</p>
-<p><strong>e)</strong> Determine el cuantil <span class="math inline">\(\varphi_{0.75}\)</span>.</p>
+<p><strong>b)</strong> Calcule <span class="math inline">\(\small P\!\left(\dfrac{3}{2} &lt; X &lt; \dfrac{5}{2}\right)\)</span>.</p>
+<p><strong>c)</strong> Obtenga <span class="math inline">\(\small F_X(x)\)</span>.</p>
+<p><strong>d)</strong> Calcule <span class="math inline">\(\small E(X)\)</span> y <span class="math inline">\(\small \operatorname{Var}(X)\)</span>.</p>
+<p><strong>e)</strong> Determine el cuantil <span class="math inline">\(\small \varphi_{0.75}\)</span>.</p>
 </section>
 <section id="ejercicio-1" class="slide level2">
 <h2>Ejercicio</h2>

@@ -38,25 +38,21 @@ $$
 
 Usualmente a $f_X$ se le llama **función de densidad de probabilidad** de $X$.
 
-
-
 ## Variable Aleatoria continua
 
 ### **Propiedades de la densidad**
 
-Sea $f_X:\mathbb{R}\to\mathbb{R}$. Es una **densidad** de una v.a. continua $X$ si y solo si:
+Sea $f_X:R\to R$. Es una **densidad** de una v.a. continua $X$ si y solo si:
 
-1.  $$f_X(x)\ge 0,\ \forall x\in\mathbb{R}$$
+1.  $$f_X(x)\ge 0,\ \forall x\in R$$
 
 2.  $$\int_{-\infty}^{+\infty} f_X(x)\,dx = 1$$
-
-
 
 ## Variable Aleatoria continua
 
 ### Función de distribución acumulada (\*\*)
 
-Sea $X$ una v.a.c. con densidad $f_X$. La función $F_X:\mathbb{R}\to\mathbb{R}$ dada por
+Sea $X$ una v.a.c. con densidad $f_X$. La función $F_X:R \Rightarrow R$ dada por
 
 $$
 F_X(x)=P(X\le x)=\int_{-\infty}^{x} f_X(t)\,dt
@@ -89,19 +85,15 @@ ggplot(df, aes(x = x, y = Fx)) +
   theme_classic()
 ```
 
-
-
 ## Variable Aleatoria continua
 
 ### Propiedades de la función de distribución:
 
-1.  $F_X(x)\ge 0,\ \forall x\in\mathbb{R}$\
+1.  $F_X(x)\ge 0,\ \forall x\in R$\
 2.  Si $x\le y$, entonces $F_X(x)\le F_X(y)$ (es creciente).\
-3.  $P(X> x)=1-P(X\le x),\quad \forall x\in\mathbb{R}$
+3.  $P(X> x)=1-P(X\le x),\quad \forall x\in R$
 4.  $P(a\le X\le b)=\int_{a}^{b} f_X(x)\,dx$
 5.  $\lim_{x\to -\infty}F_X(x)=0,\qquad \lim_{x\to +\infty}F_X(x)=1$
-
-
 
 ## Variable aleatoria continua
 
@@ -134,8 +126,6 @@ ggplot(df, aes(x, fx)) +
   theme_classic()
 ```
 
-
-
 ## Variable aleatoria continua
 
 **Definición función de densidad:**
@@ -158,8 +148,6 @@ $$
 
 donde $f(\cdot)$ es la función de densidad de probabilidad y $t$ se usa como la variable de integración.
 
-
-
 ## Variable aleatoria continua
 
 ### Ejemplo: Función de densidad y distribución
@@ -180,8 +168,6 @@ $$
 
 2\. Grafique $f(y)$ y $F(y)$.
 
-
-
 ## Variable aleatoria continua
 
 Ahora que conocemos la definición de $f(x)$ y $F(x)$, podemos estudiar otras maneras de describir la función, como por ejemplo las medidas de centralidad: moda, mediana y media, además de otros percentiles.
@@ -200,8 +186,6 @@ Técnicamente, se dice que $E(Y)$ existe si
 $$
 E(Y) = \int_{-\infty}^{\infty} |y| f(y)\,dy < \infty.
 $$
-
-
 
 ## Variable aleatoria continua
 
@@ -227,8 +211,6 @@ Entonces se cumplen los siguientes resultados:
 
 \*se emplea para determinar $E\!\big(g(X)\big)$ de una v.a. $X$ cuando se conoce la **distribución de** $X$, pero no se conoce la de $g(X)$.
 
-
-
 ## Variable aleatoria continua
 
 ### Varianza
@@ -244,7 +226,6 @@ $$
 $$
 \operatorname{Var}(Y) = E(Y^2) - \mu^2
 $$
-
 
 ## Variable aleatoria continua
 
@@ -263,7 +244,6 @@ Si la variable aleatoria $Y$ tiene esta densidad, encuentre:
 
 1.  $E(Y)$
 2.  $\operatorname{Var}(Y)$.
-
 
 ## Variable aleatoria continua
 
@@ -294,8 +274,6 @@ $$
 = 2.4 - (1.5)^2
 = 0.15
 $$
-
-
 
 ## Variable aleatoria continua
 
@@ -343,12 +321,12 @@ $$
 \varphi_{0.5} = \sqrt[3]{8 \cdot 0.50} \approx 1.5874
 $$
 
-## Ejercicio 
+## Ejercicio
 
 Sea $X$ una variable aleatoria con densidad
 
 $$
-f_X(x)=
+\small f_X(x)=
 \begin{cases}
 \dfrac{k}{9}, & 1\le x\le 2,\\\\
 \dfrac{kx}{6}-1, & 2< x\le 3,\\\\
@@ -358,16 +336,15 @@ $$
 
 **a)** Determine el valor de $k$.
 
-**b)** Calcule $P\!\left(\dfrac{3}{2} < X < \dfrac{5}{2}\right)$.
+**b)** Calcule $\small P\!\left(\dfrac{3}{2} < X < \dfrac{5}{2}\right)$.
 
-**c)** Obtenga $F_X(x)$.
+**c)** Obtenga $\small F_X(x)$.
 
-**d)** Calcule $E(X)$ y $\operatorname{Var}(X)$.
+**d)** Calcule $\small E(X)$ y $\small \operatorname{Var}(X)$.
 
-**e)** Determine el cuantil $\varphi_{0.75}$.
+**e)** Determine el cuantil $\small \varphi_{0.75}$.
 
-
-## Ejercicio 
+## Ejercicio
 
 Sea $X$ una v.a. con función de distribución acumulada
 
@@ -389,7 +366,7 @@ $$
 
 **d)** Determine el cuantil $\varphi_{0.65}$.
 
--
+-   
 
 ## Variable aleatoria continua
 
@@ -417,8 +394,6 @@ e)  Calcule $P(Y < 0.4 \mid Y < 0.8)$.
 
 f)  Encuentre el cuantil 95, es decir, $\varphi_{0.95}$.
 
-
-
 ## Variable aleatoria continua
 
 Suponga que $Y$ posee la función de densidad
@@ -438,4 +413,3 @@ a)  Encuentre el valor de $c$ que hace a $f(y)$ una función de densidad de prob
 b)  Encuentre $F(y)$.
 
 c)  Grafique $f(y)$ y $F(y)$.
-

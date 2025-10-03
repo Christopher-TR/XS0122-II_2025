@@ -1,0 +1,215 @@
+---
+title: "Variable Aleatoria"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+---
+
+# [**Distribuciones Discretas**]{.underline}
+
+# **Distribución Uniforme Discreta**
+
+**Definición:** Una variable aleatoria uniforme discreta X presenta la siguiente distribución de probabilidad:
+
+$$
+P(X=x) = \frac{1}{N}, \quad x \in \{1,2,3, \cdots , N\}
+$$
+
+**Esperanza:**\
+$$ \small E[X] = \frac{N+1}{2} $$
+
+**Varianza:**\
+$$  \small \operatorname{Var}(X) = \frac{N^2-1}{12}  $$
+
+## **Ejemplos Uniforme Discreta**
+
+Se lanza un dado. Sea $X$ = número de puntos obtenido. Es evidente que la distribución de probabilidad de $X$ es una distribución uniforme con:
+
+$$
+P(X=x) = \frac{1}{6}, \quad x \in \{1,2,3, \cdots , 6\}
+$$
+
+$$ \small E[X] = \frac{6+1}{2} = 3.5 $$
+
+$$  \small \operatorname{Var}(X) = \frac{N^2-1}{12} =  \frac{6^2-1}{12} = \frac{35}{12} $$
+
+# **Distribución Bernoulli**
+
+**Definición:** Es una Variable aleatoria que toma valor 1 con probabilidad $p$ (éxito) y 0 con probabilidad $1-p$ (fracaso).
+
+**Función de probabilidad:**\
+$$
+\small P(X = x) = p^x (1-p)^{1-x}, \quad x \in \{0,1\}
+$$
+
+**Esperanza:** $\small E[X] = p$
+
+**Varianza:** $\small \operatorname{Var}(X) = p(1-p)$
+
+**Función de distribución acumulada (FDA):**\
+$$
+\small F(x) = \begin{cases}
+0 & x < 0 \\
+1-p & 0 \leq x < 1 \\
+1 & x \geq 1
+\end{cases}
+$$
+
+## Ejemplos Bernoulli
+
+1.  Se lanza una moneda con $p=0.4$ de salir cara.
+    -   ¿Cuál es la probabilidad de obtener cara?
+    -   ¿Cuál es la varianza de la distribución?
+2.  Una máquina produce un producto defectuoso con probabilidad $0.1$.
+    -   Calcule la probabilidad de obtener un producto defectuoso y la esperanza.
+3.  En un examen una pregunta de verdadero/falso se responde al azar.
+    -   ¿Cuál es la esperanza y la varianza?
+
+# **Distribución Binomial**
+
+**Definición:**\
+Número de éxitos en $n$ ensayos Bernoulli independientes.
+
+-   **Función de probabilidad:**\
+    $$
+    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0,1,\dots,n
+    $$
+
+-   **Esperanza:**$\quad E[X] = np$
+
+-   **Varianza:** $\quad \operatorname{Var}(X) = np(1-p)$
+
+-   **FDA:**\
+    $$
+    F(k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}
+    $$
+
+## **Ejemplos Binomial**
+
+1.  En 10 lanzamientos de moneda justa ($p=0.5$), calcular:
+
+-   Probabilidad de exactamente 4 caras.
+-   Esperanza y varianza.
+
+2.  Una fábrica produce tornillos con probabilidad $p=0.02$ de ser defectuosos. En una muestra de $n=50$, calcular la probabilidad de que haya al menos 2 defectuosos.
+
+3.  Un dado cargado tiene probabilidad $p=1/3$ de dar seis. En 12 lanzamientos, calcule la probabilidad de obtener al menos 4 seises.
+
+# **Distribución Hipergeométrica**
+
+**Definición:**\
+Número de éxitos al seleccionar sin reemplazo de una población finita.
+
+-   **Función de probabilidad:**\
+    $$
+    P(X=k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}, \quad k = 0,1,\dots,n
+    $$
+
+-   **Esperanza:**$\quad E[X] = n \frac{K}{N}$
+
+-   **Varianza:**$\quad \operatorname{Var}(X) = n\frac{K}{N}\left(1-\frac{K}{N}\right)\frac{N-n}{N-1}$
+
+## Ejemplos Hipergeométrica
+
+1.  En una urna hay 7 bolas rojas y 13 negras. Si se extraen 5 sin reemplazo: - ¿Cuál es la probabilidad de obtener exactamente 2 rojas?\
+    -   ¿Cuál es la esperanza?
+2.  Una baraja de 52 cartas contiene 4 ases. Se sacan 10 cartas sin reemplazo. - Calcular la probabilidad de que haya exactamente 1 as.
+3.  Una muestra de 6 individuos se toma de una población de 20, de los cuales 8 tienen cierta característica. ¿Cuál es la varianza del número de individuos con la característica?
+
+# **Distribución Geométrica**
+
+**Definición:**\
+Número de ensayos hasta el primer éxito.
+
+-   **Función de probabilidad:**\
+    $$
+    P(X = k) = (1-p)^{k-1}p, \quad k = 1,2,3,\dots
+    $$
+
+-   **Esperanza:**$\quad E[X] = \frac{1}{p}$
+
+-   **Varianza:**$\quad \operatorname{Var}(X) = \frac{1-p}{p^2}$
+
+-   **FDA:**\
+    $$
+    F(k) = 1-(1-p)^k
+    $$
+
+## Ejemplos Geométrica
+
+1.  La probabilidad de que un email sea spam es $p=0.2$.
+
+    -   ¿Cuál es la probabilidad de que el primer spam ocurra en el 4to email?\
+    -   ¿Cuál es la esperanza?
+
+2.  (Sin guiar) Un dado tiene probabilidad $p=1/6$ de dar un seis. Calcule la varianza del número de lanzamientos hasta el primer seis.
+
+3.  (Sin guiar) Un futbolista tiene probabilidad $p=0.3$ de anotar un gol en cada tiro. ¿Cuál es la probabilidad de que anote por primera vez en el 5to tiro?
+
+# **Distribución Binomial Negativa**
+
+**Definición:**\
+Número de ensayos hasta obtener $r$ éxitos.
+
+-   **Función de probabilidad:**\
+    $$
+    P(X=k) = \binom{k-1}{r-1} p^r (1-p)^{k-r}, \quad k=r, r+1,\dots
+    $$
+
+-   **Esperanza:**$\quad E[X] = \frac{r}{p}$
+
+-   **Varianza:**$\quad \operatorname{Var}(X) = \frac{r(1-p)}{p^2}$
+
+-   **FDA:** (no siempre cerrada, pero puede expresarse con sumatoria).
+
+## Ejemplos Binomial Negativa
+
+1.  Una máquina tiene $p=0.4$ de producir pieza buena. ¿Cuántos ensayos se esperan hasta obtener $r=3$ piezas buenas?
+
+2.  (Sin guiar) Un jugador lanza un dado con probabilidad $p=0.25$ de éxito. ¿Cuál es la probabilidad de necesitar 6 ensayos para lograr 2 éxitos?
+
+3.  Un experimento con $p=0.1$ de éxito busca obtener $r=5$ éxitos. ¿Cuál es la varianza?
+
+# **Distribución Poisson**
+
+**Definición:**\
+Número de eventos en un intervalo de tiempo o espacio.
+
+-   **Función de probabilidad:**\
+    $$
+    P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, \quad k=0,1,2,\dots
+    $$
+
+-   **Esperanza:**$\quad E[X] = \lambda$
+
+-   **Varianza:**$\quad \operatorname{Var}(X) = \lambda$
+
+-   **FDA:**\
+    $$
+    F(k) = \sum_{i=0}^{k} \frac{e^{-\lambda}\lambda^i}{i!}
+    $$
+
+## Ejemplos Poisson
+
+1.  El número de llamadas a un call center por minuto sigue una Poisson con $\lambda=3$.
+
+    -   Calcular $P(X=2)$.\
+    -   Calcular esperanza y varianza.
+
+2.  (Sin guiar) El número de accidentes diarios en una carretera sigue una Poisson con $\lambda=1.5$. Calcule la probabilidad de que ocurran al menos 2 accidentes en un día.
+
+3.  (Sin guiar) Una fotocopiadora recibe errores con media $\lambda=0.2$ por página. ¿Cuál es la probabilidad de que en 10 páginas haya más de 1 error?

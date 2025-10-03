@@ -24,7 +24,7 @@ y ejercicios</a>
 | Probabilidad Condicional y Bayes + Variable Aleatoria                                 | [Clase 5](XS-0122_05.html)  |
 | Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 6.1](XS-0122_06.html)  |
 |                                                                                       | [Clase 6.2](XS-0122_07.html)  |
-| Valor Esperado, Distribuciones Discretas                                              | Clase 7  |
+| Valor Esperado, Distribuciones Discretas                                              | [Clase 7](XS-0122_08.html)   |
 | Distribuciones Discretas                                                              | Clase 8  |
 | Aproximaciones y Repaso de Integración                                                | Clase 9  |
 | Distribuciones Continuas                                                              | Clase 10 |

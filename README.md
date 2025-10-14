@@ -17,15 +17,15 @@ y ejercicios</a>
 
 | Tema                                                                                  | Clase    |
 |---------------------------------------------------------------------------------------|----------|
-| Introducción                                                                          | [Clase 1](XS-0122_01.html)|
-| Métodos de Conteo                                                                     | [Clase 2](XS-0122_02.html) |
-| Práctica Métodos de Conteo                                                            | [Clase 3](XS-0122_03.html)  |
-| Desarrollo Axiomático + Probabilidad Condicional                                      | [Clase 4](XS-0122_04.html)  |
-| Probabilidad Condicional y Bayes + Variable Aleatoria                                 | [Clase 5](XS-0122_05.html)  |
-| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 6](XS-0122_06.html)  |
-| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 7](XS-0122_07.html)  |
-| Distribuciones Discretas                                                              | [Clase 8](XS-0122_08.html)   |
-| Aproximaciones y Repaso de Integración                                                | Clase 9  |
+| Introducción                                                                          | [Clase 1](XS-0122_01.html)    |
+| Métodos de Conteo                                                                     | [Clase 2](XS-0122_02.html)    |
+| Práctica Métodos de Conteo                                                            | [Clase 3](XS-0122_03.html)    |
+| Desarrollo Axiomático + Probabilidad Condicional                                      | [Clase 4](XS-0122_04.html)    |
+| Probabilidad Condicional y Bayes + Variable Aleatoria                                 | [Clase 5](XS-0122_05.html)    |
+| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 6](XS-0122_06.html)    |
+| Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 7](XS-0122_07.html)    |
+| Distribuciones Discretas                                                              | [Clase 8](XS-0122_08.html)    |
+| Aproximaciones y Repaso de Integración                                                | [Clase 9](XS-0122_09.html)    |
 | Distribuciones Continuas                                                              | Clase 10 |
 | Distribuciones Continuas                                                              | Clase 11 |
 | Funciones de Verosimilitud y Generatriz de Momentos                                   | Clase 12 |

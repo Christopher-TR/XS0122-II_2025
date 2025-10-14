@@ -1,0 +1,82 @@
+---
+title: "Repaso Integración"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+---
+
+## Integrales Impropias
+
+Una **integral impropia** es aquella en la que: - El intervalo de integración es infinito, o - El integrando presenta una discontinuidad infinita en el intervalo.
+
+[***Integrales de primera especie:***]{.underline}
+
+Son aquellas donde **algún límite de integración es infinito**.
+
+$$ \int_a^{\infty} f(x)\,dx \;=\; \lim_{t \to \infty} \int_a^{t} f(x)\,dx $$
+
+y/o
+
+$$ \int_{-\infty}^{b} f(x)\,dx \;=\; \lim_{t \to -\infty} \int_{t}^{b} f(x)\,dx $$
+
+## Ejemplos:
+
+### Ejemplo 1
+
+$$ \int_1^{\infty} \frac{1}{x^2}\,dx = \lim_{t \to \infty} \int_1^t x^{-2}\,dx = \lim_{t \to \infty} \left[-\frac{1}{x}\right]_1^t = 1 $$
+
+La integral **converge**.
+
+### Ejemplo 2
+
+$$ \int_1^{\infty} \frac{1}{x}\,dx = \lim_{t \to \infty} \ln(t) = \infty $$
+
+La integral **diverge**.
+
+## Resolver las siguientes integrales (Primera especie)
+
+1.  $$\int_0^{\infty} e^{-x}\,dx$$
+2.  $$\int_1^{\infty} \frac{1}{x^p}\,dx,\ \ p > 0$$
+3.  $$\int_0^{\infty} \frac{1}{1+x^2}\,dx$$
+
+## Integrales Impropias
+
+[***Integrales de segunda especie:***]{.underline}
+
+Se presentan cuando el **integrando tiene una discontinuidad no integrable** en el intervalo de integración.
+
+Caso general con singularidad en (c \in \[a,b\]): $$ \int_a^b f(x)\,dx \;=\; \lim_{t \to c^-} \int_a^t f(x)\,dx \;+\; \lim_{t \to c^+} \int_t^b f(x)\,dx $$
+
+## Ejemplos:
+
+### Ejemplo 1
+
+$$ \int_0^1 \frac{1}{\sqrt{x}}\,dx = \lim_{t \to 0^+} \int_t^1 x^{-1/2}\,dx = \lim_{t \to 0^+} \big[2x^{1/2}\big]_t^1 = 2 $$
+
+La integral **converge**.
+
+### Ejemplo 2
+
+$$ \int_0^1 \frac{1}{x}\,dx = \lim_{t \to 0^+} \ln(x) \Big|_{t}^{1} = \infty $$
+
+La integral **diverge**.
+
+## Resolver las siguientes integrales (Segunda especie)
+
+1.  $$\int_0^1 \frac{1}{\sqrt{x}}\,dx$$
+2.  $$\int_{-1}^1 \frac{1}{x^2}\,dx$$
+3.  $$\int_0^{\pi/2} \tan(x)\,dx$$

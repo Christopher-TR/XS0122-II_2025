@@ -26,8 +26,8 @@ y ejercicios</a>
 | Variable Aleatoria, Función de Densidad y Distribución, Percentiles                   | [Clase 7](XS-0122_07.html)    |
 | Distribuciones Discretas                                                              | [Clase 8](XS-0122_08.html)    |
 | Aproximaciones y Repaso de Integración                                                | [Clase 9](XS-0122_09.html)    |
-| Distribuciones Continuas                                                              | [Clase 10](XS-0122_10.html)  |
-| Distribuciones Continuas                                                              | Clase 11 |
+| Distribuciones Continuas                                                              | [Clase 10](XS-0122_10.html)   |
+| Distribuciones Continuas                                                              | [Clase 11](XS-0122_11.html)   |
 | Funciones de Verosimilitud y Generatriz de Momentos                                   | Clase 12 |
 | Generatrices de momentos, Generatriz de Probabilidad                                  | Clase 13 |
 | Markov y Chebyshev                                                                    | Clase 14 |

@@ -1,0 +1,465 @@
+---
+title: "Función Generadora de Momentos"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+---
+
+## Función Generadora de Momentos
+
+La **función generadora de momentos** [***(FGM)***]{.underline} de una variable aleatoria $X$ se define como:
+
+$$
+M_X(t) = E[e^{tX}]
+$$
+
+**siempre que la esperanza exista para valores de** $t$ **en un entorno alrededor de** $0$**.**
+
+Es decir, existe un número $h > 0$ tal que, para todo $t$ en $(-h, h)$, la esperanza $E(e^{tX})$ existe.\
+\
+Si la esperanza no existe en un entorno de $0$, se dice que la función generadora de momentos **no existe**.
+
+*Esta función permite obtener momentos y momentos centrales de una distribución, lo que proporciona información sobre la forma y las características de dicha distribución, a partir de esta función se puede obtener la media, varianza, asimetría y curtosis de una variable aleatoria.*
+
+## Función Generadora de Momentos
+
+Podemos expresar la FGM de $X$ como:
+
+$$
+M_X(t) = \int_{-\infty}^{\infty} e^{tx} f_X(x)\,dx, 
+\quad \text{si } X \text{ es continua,}
+$$
+
+o bien:
+
+$$
+M_X(t) = \sum e^{tx} P(X = x), 
+\quad \text{si } X \text{ es discreta.}
+$$
+
+## **FGM - Teorema De Unicidad**
+
+Sean $X$ e $Y$ dos variables aleatorias con funciones generadoras de momentos\
+$M_X(t)$ y $M_Y(t)$, respectivamente.
+
+Si se cumple que
+
+$$
+M_X(t) = M_Y(t)
+$$
+
+para todos los valores de $t$,\
+entonces $X$ e $Y$ **tienen la misma distribución de probabilidad**.
+
+#### **Prueba**
+
+Para demostrar el teorema anterior, se utiliza el desarrollo en series de potencia de **Taylor** de la función exponencial:
+
+$$
+e^x = 1 + x + \dfrac{x^2}{2!} + \dots, \quad x \in \mathbb{R}.
+$$
+
+## Demostración
+
+$$
+M_X(t) = M_Y(t)
+\Rightarrow E(e^{tX}) = E(e^{tY})
+$$
+
+$$
+\Rightarrow E\!\left(1 + tX + \dfrac{t^2X^2}{2!} + \dots \right)
+= E\!\left(1 + tY + \dfrac{t^2Y^2}{2!} + \dots \right)
+$$
+
+#### Aplicando linealidad de la esperanza
+
+$$
+1 + tE(X) + \dfrac{t^2}{2!}E(X^2) + \dots 
+= 1 + tE(Y) + \dfrac{t^2}{2!}E(Y^2) + \dots
+$$
+
+$$
+\Rightarrow 1 + \mu_X t + \dfrac{\sigma_X^2 t^2}{2!} + \dots 
+= 1 + \mu_Y t + \dfrac{\sigma_Y^2 t^2}{2!} + \dots
+$$
+
+Para que los dos polinomios sean iguales, esto solo es posible si los coeficientes son iguales, es decir:
+
+$$
+\mu_X = \mu_Y 
+\quad \text{y} \quad 
+\sigma_X^2 = \sigma_Y^2.
+$$
+
+Por lo tanto, $X$ e $Y$ tienen la misma distribución de probabilidad.
+
+## Función Generadora de Momentos - Ejemplo
+
+Considere la siguiente función de probabilidad de una variable aleatoria discreta $X$:
+
+$$
+f_X(x) =
+\begin{cases}
+\dfrac{1}{6}, & x \in \{1,2,3,4,5,6\}, \\[6pt]
+0, & \text{en otro caso.}
+\end{cases}
+$$
+
+Determine su **función generadora de momentos (FGM)**.
+
+#### **Solución**
+
+#### Para una variable discreta:
+
+$$
+M_X(t) = E(e^{tX}) = \sum_{x=1}^{6} e^{tx} P(X = x)
+$$
+
+## Función Generadora de Momentos - Ejemplo
+
+Como $P(X = x) = \dfrac{1}{6}$:
+
+$$
+M_X(t) = \dfrac{1}{6} \sum_{x=1}^{6} e^{tx}
+       = \dfrac{1}{6} \left(e^{t} + e^{2t} + e^{3t} + e^{4t} + e^{5t} + e^{6t}\right) \\ = \dfrac{e^{t}}{6} \left(1+ e^{t} + e^{2t} + e^{3t} + e^{4t} + e^{5t} \right)
+$$
+
+:::: {.callout-note appearance="minimal" icon="false"}
+::: {style="font-size:0.7em; "}
+Usando la progresión geométrica con razón $r = e^{t}$.
+
+Para una **suma finita** $( 1 + r + r^2 + \cdots + r^{n} )$ sabemos que:
+
+$$
+\small\sum_{k=0}^{n}  r^k =  \left( \frac{1-r^{n+1}}{1-r}\right), \quad (r \ne 1)
+$$
+
+Tomando $\small r = e^{t} \quad \text{y}\quad  n = 5$
+
+$$
+\small 1 + e^{t} + e^{2t} + \cdots + e^{5t} = \frac{1- e^{6t} }{1-e^{t}}
+$$
+:::
+::::
+
+$$
+M_X(t) = \dfrac{e^{t} }{6} \cdot \dfrac{1 - e^{6t}}{1 - e^{t}}, \quad t \ne 0
+$$
+
+$\small \text{y para $t = 0$ se cumple que $M_X(0) = 1$.}$
+
+## Función Generadora de Momentos - Ejemplo
+
+Considere la siguiente función de probabilidad de una v.a. discreta (X):
+
+$$
+f_X(x)=
+\begin{cases}
+\displaystyle \frac{1}{2^{x}}, & x\in\{1,2,\ldots\},\\[6pt]
+0, & \text{en otro caso.}
+\end{cases}
+$$
+
+Por definición, para v.a. discreta:
+
+$$
+M_X(t)=E\!\left(e^{tX}\right)=\sum_{x=1}^{\infty} e^{tx}\cdot\frac{1}{2^{x}}
+     =\sum_{x=1}^{\infty}\left(\frac{e^{t}}{2}\right)^{x} = \sum_{x=1}^{\infty}\left(\frac{e^{t}}{2}\right)^{x} +1 - 1
+$$
+
+$$
+M_X(t)= \sum_{x=0}^{\infty}\left(\frac{e^{t}}{2}\right)^{x} - 1
+$$
+
+## Función Generadora de Momentos - Ejemplo
+
+:::: {.callout-note appearance="minimal" icon="false"}
+::: {style="font-size:0.8em;"}
+Usando la serie geométrica con razón $r = \frac{e^{t}}{2}$.
+
+Para una **suma infinita** $( 1 + r + r^2 + \cdots + r^{n}+r^{n+1}+r^{n+2}\cdots )$ sabemos que:
+
+$$
+\small {\sum_{k=0}^{\infty}  r^k =   \frac{1}{1-r}, \quad |r|<1  }
+$$
+
+Entonces
+
+$$
+\sum_{x=0}^{\infty}\left(\frac{e^{t}}{2}\right)^{x} = \frac{1}{1-\frac{e^{t}{2}}{2}} = \frac{2}{2-e^{t}}
+$$
+
+Si $\left|\tfrac{e^{t}}{2}\right|<1 \iff t<\ln 2$:
+:::
+::::
+
+Entonces
+
+$$
+M_X(t)=\frac{\frac{e^{t}}{2}}{1-\frac{e^{t}}{2}}
+      =\frac{e^{t}}{\,2-e^{t}\,}, \qquad t<\ln 2,
+$$
+
+$\small \text{y para $t = 0$ se cumple que $M_X(0) = 1$.}$
+
+## Función Generadora de Momentos - $Gamma(\alpha, \beta)$
+
+Sea $X$ una va. $Gamma(\alpha, \beta)$, encuentre su FGM:\
+$$
+f_X(x)=
+\begin{cases}
+\dfrac{x^{\alpha-1} e^{-x/\beta}}{\beta^{\alpha}\Gamma(\alpha)}, & 0 \le x < \infty, \\[6pt]
+0, & \text{en otro caso.}
+\end{cases}
+$$
+
+#### **Ejercicio**
+
+Sugerencia - Recuerde que:
+
+$$
+= \int_{0}^{\infty} \,x^{a-1}e^{-x/b}\,dx = \Gamma(a)\cdot b^a
+$$
+
+## Función Generadora de Momentos - $Gamma(\alpha, \beta)$
+
+$$
+M_X(t) = \int_{0}^{\infty} e^{tx}\,\frac{x^{\alpha-1}e^{-x/\beta}}{\beta^{\alpha}\Gamma(\alpha)}\,dx
+=  \frac{1}{\beta^{\alpha}\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha-1}
+e^{-x\left(\frac{1-t\beta}{\beta}\right)}dx   
+$$
+
+$$
+=   \frac{1}{\beta^{\alpha}\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha-1}e^{-x/ \left(\frac{\beta}{1-t\beta}\right)}dx
+$$
+
+:::: {.callout-note appearance="minimal" icon="false"}
+::: {style="font-size:0.8em;"}
+Sabemos que:
+
+$$
+= \int_{0}^{\infty} \,x^{a-1}e^{-x/b}\,dx = \Gamma(a)\cdot b^a
+$$
+
+Entonces tomando a = $\alpha$ y b = $\left(\frac{\beta}{1-t\beta}\right)$
+:::
+::::
+
+$$
+M_X(t)=     \frac{1}{\beta^{\alpha}\Gamma(\alpha)} \int_{0}^{\infty} x^{\alpha-1}e^{-x/ \left(\frac{\beta}{1-t\beta}\right)}dx =  \frac{1}{\beta^{\alpha}\Gamma(\alpha)}\cdot
+\Gamma(\alpha){\left(\frac{\beta}{1-t\beta}\right)^{\alpha}}
+$$
+
+$$
+= \left(\frac{1}{1-\beta t}\right)^{\alpha},\quad \text{si } t<\frac{1}{\beta}.
+$$
+
+## Función Generadora de Momentos - $Binomial(n, p)$
+
+Sea $X$ una va. $Binomial(n,p)$, encuentre su FGM:
+
+$$
+P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}, \quad x = 0, 1, \dots, n.
+$$
+
+#### **Ejercicio**
+
+Sugerencia - Aplique el teorema del Binomio:
+
+$$
+\sum_{x=0}^{n} \binom{n}{x}a^x b^{n-x} = (a + b)^n
+$$
+
+## Función Generadora de Momentos - $Binomial(n, p)$
+
+Por definición:
+
+$$
+M_X(t) = E(e^{tX}) = \sum_{x=0}^{n} e^{tx} \binom{n}{x} p^x (1 - p)^{n - x}.
+$$
+
+$$
+ = \sum_{x=0}^{n} \binom{n}{x} (p e^{t})^x (1 - p)^{n - x}.
+$$
+
+:::: {.callout-note appearance="minimal" icon="false"}
+::: {style="font-size:0.8em;"}
+Sabemos que:
+
+$$
+\sum_{x=0}^{n} \binom{n}{x}a^x b^{n-x} = (a + b)^n
+$$
+
+Entonces tomando a = $pe^t$ y b = $1-p$
+:::
+::::
+
+$$
+M_X(t) = E(e^{tX}) = \sum_{x=0}^{n} \binom{n}{x} (p e^{t})^x (1 - p)^{n - x} = (pe^t + 1-p)^n = (pe^t+q)^n
+$$
+
+## Función Generadora de Momentos - Ejercicios
+
+**1)** Demuestre que si $X \sim Poisson(\lambda)$ entonces su $FGM = e^{\lambda(e^{t}-1)}$
+
+Sugerencia: Recuerde que $e^x = \sum_{k=0}^{\infty}{\frac{x^k}{k!}}$.
+
+**2)** Sea $X\sim Geométrica(p)$. Encuentre su $FGM$.
+
+**3)** Sea $X$ una variable aleatoria tal que $$
+f_X(x) = \lambda e^{-\lambda x}, \quad x \ge 0.
+$$
+
+Demuestre que su $FGM =\frac{1}{1-\frac{t}{\lambda}}, \quad \text{si } 0<t<\lambda$
+
+## Función Generadora de Momentos - Ejercicios
+
+**4)** Sea $X$ una variable aleatoria tal que:
+
+$$
+f_X(x)=
+\begin{cases}
+\displaystyle \frac{1}{2^{x}}, & x\in\{1,2,\ldots\},\\[6pt]
+0, & \text{en otro caso.}
+\end{cases}
+$$
+
+Encuentre su $FGM$.
+
+**5)** Sea $X \sim Uniforme(a,b)$ es decir:
+
+$$
+f_X(x)=
+\begin{cases}
+\displaystyle \frac{1}{b-a}, & a \le x \le b,\\[6pt]
+0, & \text{en otro caso.}
+\end{cases}
+$$
+
+Encuentre su $FGM$.
+
+**6)** Sea $X \sim Bernoulli(p)$ demuestre que su $FGM = pe^t+q$.
+
+## Momentos al Origen
+
+Para cada número entero $n$, el **n-ésimo momento** (*también llamado n-ésimo momento al origen*) de $X$, denotado por $\mu'_n$, se define como:
+
+$$
+\mu'_n = E[X^n]
+$$
+
+donde $\mu'_1 = E[X], \quad \mu'_2 = E[X^2], \quad \mu'_3 = E[X^3]\cdots$
+
+<br>
+
+El **n-ésimo momento central** de $X$, denotado por $\mu_n$, es:
+
+$$
+\mu_n = E[(X - \mu)^n]
+$$
+
+donde $\mu_1 = E[(X-\mu)^1], \quad \mu_2 = E[(X-\mu)^2], \quad \mu_3 = E[(X-\mu)^3]\cdots$
+
+:::: {.callout-note appearance="minimal" icon="false"}
+::: {style="font-size:0.9em;"}
+Nota:La **varianza** de una variable aleatoria $X$, es su **segundo momento central**
+
+$$ \operatorname{Var}(X) = E[(X - E[X])^2]. $$
+:::
+::::
+
+## Teorema - (FGM y su relación con los momentos)
+
+Si $X$ tiene una función generadora de momentos $M_X(t)$ entonces:
+
+$$
+E[X^n] = M_X^{(n)}(0),
+$$
+
+donde se define:
+
+$$
+M_X^{(n)}(0) = 
+\left. \dfrac{d^n}{dt^n} M_X(t) \right|_{t = 0}.
+$$
+
+Es decir, **el n-ésimo momento** de $X$ es igual a la **n-ésima derivada** de la función generadora de momentos $M_X(t)$ evaluada en $t=0$.
+
+## FGM y su relación con los momentos - Ejemplo
+
+Considere la siguiente función de probabilidad de una variable aleatoria discreta $X$:
+
+$$\small f_X(x) = \begin{cases} \dfrac{e^{-\lambda} \lambda^x}{x!}, & x \in \{0,1,2,\cdots\}, \\[6pt] 0, & \text{en otro caso.} \end{cases} $$
+
+Determine el primer y segundo momento al origen.
+
+**Solución:** Sabemos que su función generadora de momentos (FGM) de $X$ es:
+
+$$
+M_X(t) = e^{\lambda(e^{t}-1)}
+$$
+
+Usando el teorema anterior:
+
+$$
+E[X^1] = M_X^{(1)}(0) = \left. \dfrac{d^1}{dt^1} M_X(t) \right|_{t = 0}.
+$$
+
+## FGM y su relación con los momentos - Ejemplo
+
+$$
+E[X^1] = M_X^{(1)}(0) =  \dfrac{d^1}{dt^1} M_X(t) |_{t = 0} =\dfrac{d^1}{dt^1} \left( e^{\lambda(e^{t}-1)} \right)|_{t = 0}.
+$$
+
+$$
+e^{\lambda(e^{t}-1)}\cdot \lambda e^{t}|_{t = 0} = e^{\lambda(e^{0}-1)}\cdot \lambda e^{0}  = \lambda
+$$
+
+$\small \text{Lo cual válida que $E(X) = \lambda$ en una $Poisson$. Ahora:}$
+
+$$
+E[X^2] = M_X^{(2)}(0) =  \dfrac{d^2}{dt^2} M_X(t) |_{t = 0} = \dfrac{d^1}{dt^1} \dfrac{d^1}{dt^1} \left( e^{\lambda(e^{t}-1)} \right)|_{t = 0}.
+$$
+
+$$
+ =  \dfrac{d^1}{dt^1}  \left( e^{\lambda(e^{t}-1)}\cdot \lambda e^{t} \right)|_{t = 0} =   \dfrac{d^1}{dt^1}  \left( e^{\lambda(e^{t}-1)+t}\cdot \lambda  \right)|_{t = 0} 
+$$
+
+$$
+\lambda \left[ e^{\lambda(e^{t}-1)+t}\cdot (\lambda e^t+1)  \right]|_{t = 0} = \lambda \left[ e^{\lambda(e^{0}-1)+0}\cdot (\lambda e^0+1)  \right]|_{t = 0}
+$$
+
+$$
+\lambda(\lambda+1) = \lambda^2+\lambda
+$$
+
+$\small \text{Esto es lo que sabíamos de la $E(X^2)$ de una Poisson}$
+
+## FGM y su relación con los momentos - Ejercicios
+
+**1)** Juan recibe un salario mensual base de **150 000 colones**, más un incentivo mensual según las ventas que realice.\
+Este incentivo puede modelarse mediante una variable aleatoria continua $X$, **en miles de colones**, cuya función generadora de momentos está dada por:
+
+$$
+m_X(t) = (1 - 30t)^{-2}
+$$
+
+a.¿Cuál es el salario promedio mensual que recibe Juan?
+
+b.¿Cuál es la varianza del salario promedio mensual que recibe Juan?\
+
+**2)** ***Calcule el primer y segundo momento al origen de los ejercicios planteados en las diapositvas 14 y 15.***

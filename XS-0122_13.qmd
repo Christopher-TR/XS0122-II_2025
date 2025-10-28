@@ -1,0 +1,210 @@
+---
+title: "Función de Verosimilitud"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+---
+
+## Función de Verosimilitud
+
+Sean $X_1, X_2, \ldots, X_n$ una muestra aleatoria de variables aleatorias con una misma función de probabilidad:
+
+$$
+f(X; \theta)
+$$
+
+Entonces, para una muestra en particular $(x_1, x_2, \ldots, x_n)$, la **función de verosimilitud** $L(\theta)$ se define como la función de densidad conjunta de $(X_1, X_2, \ldots, X_n)$ evaluada en los puntos observados, es deficir:
+
+$$
+L(\theta) = f(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n; \theta)
+$$
+
+> 💡 **Nota:** La función de verosimilitud **depende del parámetro** $(\theta)$.
+
+Si la función tiene más de un parámetro y no fijamos ninguno, entonces puede depender de un **vector de parámetros**: $(\theta_1, \theta_2, \ldots, \theta_k)$
+
+## Función de verosimilitud
+
+-   Por norma general, se suele **asumir que las variables** $(X_1, X_2, \ldots, X_n)$ **son independientes**.
+
+-   Esto permite **separar la probabilidad conjunta** en una multiplicación de probabilidades marginales.
+
+$$
+L(\theta) = f(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n; \theta)
+$$
+
+$$
+L(\theta) = f(X_1 = x_1; \theta) \times f(X_2 = x_2; \theta) \times \cdots \times f(X_n = x_n; \theta)
+$$
+
+$$
+L(\theta) = \prod_{i=1}^{n} f(X_i = x_i; \theta)
+$$
+
+## Función de verosimilitud - Ejemplo
+
+Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** que proviene de una distribución $Poisson(\lambda)$. Encuentre $L(\lambda)$:
+
+$$
+L(\lambda) = \prod_{i=1}^{n} f(X_i = x_i; \lambda) = \prod_{i=1}^{n} \frac{e^{-\lambda}\cdot\lambda^{x_i}}{x_{i}!}
+$$
+
+$$
+L(\lambda) = \left( \frac{e^{-\lambda}\cdot\lambda^{x_1}}{x_{1}!} \right)\cdot\left( \frac{e^{-\lambda}\cdot\lambda^{x_2}}{x_{2}!} \right)\cdots \cdots\ \cdots \left(\frac{e^{-\lambda}\cdot\lambda^{x_n}}{x_{n}!} \right)
+$$
+
+$$
+L(\lambda) = \frac{e^{\lambda+\lambda\cdots+\lambda}\cdot\lambda^{x_1+x_2+\cdots+x_n}}{x_{1}!x_{2}!\cdots x_{n}!}
+$$
+
+$$L(\lambda) =  \frac{e^{-n\lambda}\cdot\lambda^{\sum_{i=1}^{n} x_i}}{\prod_{i=1}^{n} x_{i}!}$$
+
+## Función de verosimilitud - Ejemplo
+
+Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** que proviene de una distribución $f_X$ tal que:
+
+$$
+f_X(x)=\begin{cases}\theta e^{-\theta x}, \quad x \ge 0. \\[6pt]0, & \text{en otro caso.}\end{cases}
+$$
+
+Encuentre $L(\theta)$:
+
+$$
+L(\theta) = \prod_{i=1}^{n} f(X_i = x_i; \theta) = \prod_{i=1}^{n} \theta e^{-\theta x_i}
+$$ $$
+L(\theta) = \left(\theta e^{-\theta x_1} \right) \cdot \left(\theta e^{-\theta x_2}\right)\cdots\left(\theta e^{-\theta x_n}  \right)
+$$
+
+$$
+L(\theta) = \theta^n e^{-\theta \sum_{i=1}^{n}x_i}
+$$
+
+## Función de verosimilitud - Ejercicios
+
+-   Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** $Binomial(n,p)$ consiga $L(p)$
+
+-   Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** $Normal(\mu,\sigma)$ consiga $L(\mu,\sigma)$
+
+-   Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** $Geométrical(\phi)$ consiga $L(\phi)$
+
+-   Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** que proviene de una distribución $f_X$ tal que:
+
+    $$
+    f_X =\begin{cases}  \frac{1}{\theta^2 }xe^{-\frac{x}{\theta}} , & & x\geq 0\\   0, & &  x<0,\end{cases}
+    $$
+
+    Encuentre $L(\theta)$.
+
+## Estimador de máxima verosimilitud
+
+Sea $X_{1}, X_{2}, ... , X_{n}$ una muestra aleatoria sobre una población con distribución $f_X(x,\theta)$ La función de verosimilitud $\mathcal{L}(x_{1}, ... , x_{n}|\theta)$, mejor expresada como $\mathcal{L}(\theta)$, se dice que es una función de los parámetros para un específico resultado de la muestra aleatoria.
+
+**Ejemplo.** Suponga que tenemos una función de densidad discreta **(que toma valores 1, 2, 3 y 4)** que depende de un parámetro $\theta$ que solo puede tomar tres valores **(0,1,2)**. Su función de probabilidad viene dada en la siguiente tabla:
+
+**Función de probabilidad**
+
+| y             | 1    | 2    | 3    | 4    |
+|---------------|------|------|------|------|
+| $f(y;\theta)$ |      |      |      |      |
+| $f(y;0)$      | .980 | .005 | .005 | .010 |
+| $f(y;1)$      | .100 | .200 | .200 | .500 |
+| $f(y;2)$      | .098 | .001 | .001 | .900 |
+
+------------------------------------------------------------------------
+
+Supongamos que obtuvimos una muestra aleatoria de tamaño cuatro donde observamos los siguientes datos: 4,4,3,4. ¿Cuál es el valor de $\theta$ que máximiza la función de verosimilitud?
+
+**Solución**. Debemos obtener la verosmilitud para la muestra obtenida para cada uno de los valores de $\theta$. El valor de $\theta$ que genere la máxima verosimilitud será el estimador de máxima verosimilitud.
+
+> 💡 La función de verosimilitud es la probabilidad conjunta de la muestra observada. En este caso viene dada por:
+
+$$
+\small \begin{align*} \mathcal{L}(\theta) = P(Y=4|\theta) \cdot P(Y=4|\theta) \cdot P(Y=3|\theta) \cdot P(Y=4|\theta)  &= P(Y=4|\theta)^{3} \cdot P(Y=3|\theta) \end{align*}
+$$
+
+Debemos encontrar este valor para cada uno de los posibles valores de $\theta$:
+
+$$\small \mathcal{L}(0) = (0.010)^{3} \cdot (0.005) = 5 \cdot 10^{-09}$$ $$\small \mathcal{L}(1) = (0.500)^{3} \cdot (0.200) = 0.025$$ $$\small \mathcal{L}(2) = (0.900)^{3} \cdot (0.001) = 0.00729$$
+
+------------------------------------------------------------------------
+
+En este caso obtenemos la mayor verosimilitud cuando $\theta=1$, por lo tanto el estimador de máxima verosimilitud sería $\hat{\theta} = 1$.
+
+> **💡 En el caso en que** $\theta$ **sea una variable cuyo dominio es continuo, para encontrar el estimador de** $\theta$ **basta con optimizar la verosimilitud siempre que existan los máximos correspondientes.**
+
+**Ejemplo 1.** Sea $X_{1}, X_{2}, ... , X_{n}$ una muestra aleatoria tal que $X_{j} \sim Bernoulli(p)$. Determinar el estimador de máxima verosimilitud (EMV) para $p$.
+
+**Solución.**
+
+$$
+\mathcal{L}(p) =   \prod_{i=1}^{n} p^{x_i}(1-p)^{1-x_i} = p^{\sum_{i=1}^{n}x_i}(1-p)^{n-\sum_{i=1}^{n}x_i}
+$$
+
+------------------------------------------------------------------------
+
+Derivamos esta función con respecto a $p$ e igualamos a cero. No obstante podemos notar como esto va a ser un proceso tedioso pues existe un producto de distintas funciones de $p$. Para facilitar este cálculo podemos utilizar una propiedad matemática que establece que si $f(x)$ tiene un punto extremo en $x_0$ y $f(x) > 0$ entonces $\ln f(x)$ también tiene un valor extremo en $x_0$. Por lo tanto podemos hacer uso de la *log-verosimilitud*:
+
+$$\small \ell(p) = \ln \mathcal{L}(p) = \left(\sum_{i=1}^{n} x_{i} \right)\ln p + (n-\sum_{i=1}^{n} x_{i} ) \ln (1-p)$$
+
+$$\small \Rightarrow \frac{\partial \ln \mathcal{L}}{\partial p} =  \frac{\sum_{i=1}^{n} x_{i} }{p} - \frac{n-\sum_{i=1}^{n} x_{i} }{1-p} = 0 $$
+
+$$\small \Rightarrow  \frac{\sum_{i=1}^{n} x_{i} }{p} = \frac{n-\sum_{i=1}^{n} x_{i} }{1-p} $$
+
+$$ \small \Rightarrow \hat{p}  = \frac{\sum_{i=1}^{n} x_{i} }{n}$$
+
+El valor crítico es $\hat{p} = \frac{\sum_{j=1}^{n} x_{j} }{n} = \bar{x}$ solo faltaría demostrar que efectivamente sea un máximo.
+
+------------------------------------------------------------------------
+
+**Ejemplo 2.** Sea $(X_1, X_2, \ldots, X_n)$ una muestra **iid** que proviene de una distribución $f_X$ tal que:
+
+$$ f_X(x)=\begin{cases}\theta e^{-\theta x}, \quad x \ge 0. \\[6pt]0, & \text{en otro caso.}\end{cases} $$
+
+Determine el estimador de máxima verosimilitud (EMV) para $\theta$.
+
+Sabemos que: $L(\theta) = \theta^n e^{-\theta \sum_{i=1}^{n}x_i}$
+
+$$
+\ell(\theta)=\log L(\theta)
+= n\log\theta-\theta\sum_{i=1}^n x_i.
+$$
+
+$$
+\frac{d\ell(\theta)}{d\theta}
+=\frac{n}{\theta}-\sum_{i=1}^n x_i = 0
+$$
+
+$$
+\Rightarrow \quad\widehat{\theta}=\frac{n}{\sum_{i=1}^n x_i}=\frac{1}{\bar X}
+$$
+
+## Ejercicios
+
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria proveniente de una población $Poisson(\lambda)$. Estime el EMV para $\lambda$.
+
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria proveniente de una población $Binomial(n,p)$. Estime el EMV para $p$.
+
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria proveniente de una $Normal(\mu,\sigma)$, con densidad:
+
+$$
+ f(x;\mu,\sigma)=\frac{1}{\sigma\sqrt{2\pi}}
+e^{-\frac12\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+a)  Demuestre que el EMV de $\mu$ es $\bar X$.
+
+b)  Demuestre que el EMV de $\sigma$ es: $\hat{\sigma}=\sqrt{\frac{1}{n}\sum_{i=1}^n (x_i-\bar X)^2 }.$

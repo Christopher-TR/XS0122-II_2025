@@ -30,4 +30,4 @@ y ejercicios</a>
 | Distribuciones Continuas                                                              | [Clase 11](XS-0122_11.html)   |
 | Generatriz de Momentos y Generatrices de momentos                                     | [Clase 12](XS-0122_12.html)   |
 | Funciones de Verosimilitud                                                            | [Clase 13](XS-0122_13.html) |
-| Aproximaciones, Markov y Chebyshev                                                    | [Clase 14](Clase14.html) |
+| Aproximaciones, Markov y Chebyshev                                                    | [Clase 14] |

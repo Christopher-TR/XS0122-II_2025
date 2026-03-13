@@ -218,7 +218,7 @@ P(A) = \frac{\text{Casos Favorables}}{\text{Casos Totales}} = \frac{\text{Cardin
 <p><strong><em>Entonces el total de muestras ordenadas con reemplazo de tamaño n de una población N elementos es</em></strong> <span class="math inline">\(N^n\)</span></p>
 <p>La prueba es trivial usando el principio multiplicativo.</p>
 </div>
-<p><strong>Ejemplo:</strong> Suponga que se extrae una bola tres veces (con reemplazo) de una “bolsa” que contiene bolas de los colores <strong>{rojo, azul, verde, amarillo}.</strong></p>
+<p><strong>Ejemplo:</strong> Suponga que se extrae una bola tres veces (con reemplazo) de una “bolsa” que contiene bolas de los colores <strong>{rojo, azul, verde, amarillo, morado}.</strong></p>
 <p>Si no interesa el orden la muestra <strong>{rojo, azul, azul}</strong> es diferente de <strong>{azul, azul, rojo}</strong> aunque las bolas extraídas hayan sido las mismas.</p>
 <p>Entonces tenemos <span class="math inline">\(5\cdot5\cdot5 = 5^3 = 125\)</span> muestras distintas posibles.</p>
 </section>
@@ -240,11 +240,19 @@ nPr = \frac{n!}{(n-r)!} \quad r \leq n
 <section id="ejercicio-1" class="slide level2">
 <h2>Ejercicio</h2>
 <ol type="1">
-<li><p>Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL.</p></li>
-<li><p>Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL.</p></li>
-<li><p>Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van al inicio.</p></li>
-<li><p>Cuántas palabras de 4 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van al inicio <strong><em>(Note que podemos tener palabras con 1 o dos vocales)</em></strong>.</p></li>
-<li><p>Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van juntas.</p></li>
+<li><p>Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL (sin reemplazo).</p></li>
+<li><p>Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL (con reemplazo).</p></li>
+<li><p>Cuántas palabras de 7 letras distintas se pueden formar con las letras de la palabra AZULEJO si se tiene la restricción que las vocales van al inicio.</p></li>
+<li><p>Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra EUCALIPTO (Sin reemplazo y con reemplazo).</p></li>
+<li><p>Cuántas palabras de 9 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción que las vocales van al inicio (sin reemplazo).</p></li>
+</ol>
+</section>
+<section id="ejercicio-2" class="slide level2">
+<h2>Ejercicio</h2>
+<ol start="6" type="1">
+<li><p>Cuántas palabras de 9 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción que las A,E van al inicio y las I,O,U al final (sin reemplazo).</p></li>
+<li><p>Cuántas palabras de 4 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción de que deben tener al menos una vocal y las vocales estén al inicio (sin reemplazo).</p></li>
+<li><p>Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción de que deben tener al menos dos vocales y las vocales deben estar juntan (sin reemplazo).</p></li>
 <li><p>¿Cuántos números telefónicos diferentes de siete dígitos se pueden formar si el primer dígito no puede ser cero?</p></li>
 </ol>
 </section>

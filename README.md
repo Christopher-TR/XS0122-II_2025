@@ -10,8 +10,6 @@ Este curso es teórico-práctico y se enfoca principalmente en proporcionar los 
 [Carta al
 estudiante](https://christopher-tr.github.io/XS0122-II_2025/XS-0122%20carta%20al%20estudiante.pdf)
 
-<a href="https://docs.google.com/spreadsheets/d/14FfMXJsYkpZeMUUQDVjJPZyQKMyyAQUU0X7nDtoBRtk/edit?gid=0#gid=0">Cronograma
-y ejercicios</a>
 
 ## Presentaciones
 

@@ -116,7 +116,7 @@ Sea una población de ***N*** elementos. Una muestra ordenada con reemplazo de t
 La prueba es trivial usando el principio multiplicativo.
 :::
 
-**Ejemplo:** Suponga que se extrae una bola tres veces (con reemplazo) de una “bolsa” que contiene bolas de los colores **{rojo, azul, verde, amarillo}.**
+**Ejemplo:** Suponga que se extrae una bola tres veces (con reemplazo) de una “bolsa” que contiene bolas de los colores **{rojo, azul, verde, amarillo, morado}.**
 
 Si no interesa el orden la muestra **{rojo, azul, azul}** es diferente de **{azul, azul, rojo}** aunque las bolas extraídas hayan sido las mismas.
 
@@ -146,17 +146,25 @@ $=n\cdot (n-1)\cdot (n-2) \cdots (n-r+1) \cdot \frac{(n-r)!}{(n-r)!} = \frac{n!}
 
 ## Ejercicio
 
-1.  Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL.
+1.  Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL (sin reemplazo).
 
-2.  Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL.
+2.  Cuántas palabras de 4 letras distintas se puede formar con las letras de la palabra AZUL (con reemplazo).
 
-3.  Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van al inicio.
+3.  Cuántas palabras de 7 letras distintas se pueden formar con las letras de la palabra AZULEJO si se tiene la restricción que las vocales van al inicio.
 
-4.  Cuántas palabras de 4 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van al inicio ***(Note que podemos tener palabras con 1 o dos vocales)***.
+4.  Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra EUCALIPTO (Sin reemplazo y con reemplazo).
 
-5.  Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra AZUL si se tiene la restricción que las vocales van juntas.
+5.  Cuántas palabras de 9 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción que las vocales van al inicio (sin reemplazo).
 
-6.  ¿Cuántos números telefónicos diferentes de siete dígitos se pueden formar si el primer dígito no puede ser cero?
+## Ejercicio
+
+6.  Cuántas palabras de 9 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción que las A,E van al inicio y las I,O,U al final (sin reemplazo).
+
+7.  Cuántas palabras de 4 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción de que deben tener al menos una vocal y las vocales estén al inicio (sin reemplazo).
+
+8.  Cuántas palabras de 5 letras distintas se pueden formar con las letras de la palabra EUCALIPTO si se tiene la restricción de que deben tener al menos dos vocales y las vocales deben estar juntan (sin reemplazo).
+
+9.  ¿Cuántos números telefónicos diferentes de siete dígitos se pueden formar si el primer dígito no puede ser cero?
 
 ## Métodos de Conteo
 

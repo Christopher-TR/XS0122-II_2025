@@ -78,7 +78,7 @@ $\left| Trayecto \right|= \left|B\times S\right| = \left|B\right|\times \left|S\
 
 ## Ejercicio
 
-Suponga que en una clase hay siete personas, cuatro son mujeres y 3 hombres. Si se tiene que escoger a un grupo de 3 personas.
+Suponga que en una clase hay siete personas, cuatro son mujeres y 3 hombres. Si se tiene que escoger a un grupo de 3 personas (para distintas funciones - Presidente, Tesorer, Fiscal).
 
 1.  ¿De cuántas formas pueden formarse el grupo si no hay restricciones?
 

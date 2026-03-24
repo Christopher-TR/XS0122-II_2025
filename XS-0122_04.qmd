@@ -146,7 +146,7 @@ $P(A^c) =1-P(A)$
 
 ## Axiomas (Propiedades de las medidas de probabilidad)
 
-4\) Si $A$ y $B$ son eventos, entonces: $P(B-A) = P(A\cap B^c) = P(A) - P(A\cap B).$
+4\) Si $A$ y $B$ son eventos, entonces: $P(A-B) = P(A\cap B^c) = P(A) - P(A\cap B).$
 
 **Prueba:** Ejercicio Note que $\small A=(A\cap B^c) \cup (A\cap B)$
 

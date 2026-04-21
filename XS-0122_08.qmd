@@ -19,8 +19,6 @@ author:
 lang: es  # español
 ---
 
-# [**Distribuciones Discretas**]{.underline}
-
 # **Distribución Uniforme Discreta**
 
 **Definición:** Una variable aleatoria uniforme discreta X presenta la siguiente distribución de probabilidad:
@@ -86,7 +84,7 @@ Número de éxitos en $n$ ensayos Bernoulli independientes.
 
 -   **Función de probabilidad:**\
     $$
-    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0,1,\dots,n
+    P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x = 0,1,\dots,n
     $$
 
 -   **Esperanza:**$\quad E[X] = np$
@@ -95,7 +93,7 @@ Número de éxitos en $n$ ensayos Bernoulli independientes.
 
 -   **FDA:**\
     $$
-    F(k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}
+    F(x) = \sum_{i=0}^{x} \binom{n}{i} p^i (1-p)^{n-i}
     $$
 
 ## **Ejemplos Binomial**
@@ -116,7 +114,7 @@ Número de éxitos al seleccionar sin reemplazo de una población finita.
 
 -   **Función de probabilidad:**\
     $$
-    P(X=k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}, \quad k = 0,1,\dots,n
+    P(X=x) = \frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}, \quad x = 0,1,\dots,n
     $$
 
 -   **Esperanza:**$\quad E[X] = n \frac{K}{N}$
@@ -137,7 +135,7 @@ Número de ensayos hasta el primer éxito.
 
 -   **Función de probabilidad:**\
     $$
-    P(X = k) = (1-p)^{k-1}p, \quad k = 1,2,3,\dots
+    P(X = x) = (1-p)^{x-1}p, \quad x = 1,2,3,\dots
     $$
 
 -   **Esperanza:**$\quad E[X] = \frac{1}{p}$
@@ -146,7 +144,7 @@ Número de ensayos hasta el primer éxito.
 
 -   **FDA:**\
     $$
-    F(k) = 1-(1-p)^k
+    F(x) = 1-(1-p)^x
     $$
 
 ## Ejemplos Geométrica
@@ -167,7 +165,7 @@ Número de ensayos hasta obtener $r$ éxitos.
 
 -   **Función de probabilidad:**\
     $$
-    P(X=k) = \binom{k-1}{r-1} p^r (1-p)^{k-r}, \quad k=r, r+1,\dots
+    P(X=x) = \binom{x-1}{r-1} p^r (1-p)^{x-r}, \quad x=r, r+1,\dots
     $$
 
 -   **Esperanza:**$\quad E[X] = \frac{r}{p}$
@@ -191,7 +189,7 @@ Número de eventos en un intervalo de tiempo o espacio.
 
 -   **Función de probabilidad:**\
     $$
-    P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, \quad k=0,1,2,\dots
+    P(X = x) = \frac{e^{-\lambda}\lambda^x}{x!}, \quad x=0,1,2,\dots
     $$
 
 -   **Esperanza:**$\quad E[X] = \lambda$
@@ -200,7 +198,7 @@ Número de eventos en un intervalo de tiempo o espacio.
 
 -   **FDA:**\
     $$
-    F(k) = \sum_{i=0}^{k} \frac{e^{-\lambda}\lambda^i}{i!}
+    F(x) = \sum_{i=0}^{x} \frac{e^{-\lambda}\lambda^i}{i!}
     $$
 
 ## Ejemplos Poisson

@@ -1,0 +1,141 @@
+---
+title: "Aproximaciones Discretas"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+---
+
+## Aproximación de la binomial por medio de la Poisson
+
+**Teorema 7.13.**
+
+Si X es una variable aleatoria discreta tal que $X\sim Bin(n,p)$ para la cual $n\rightarrow\infty$, $p\rightarrow0$ y $\lambda=np$ constante, entonces:
+
+$$\lim_{n\rightarrow\infty}\binom{n}{x}p^{x}(1-p)^{n-x}=\frac{\lambda^{x}e^{-\lambda}}{x!}$$
+
+**Demostración:**
+
+$$\lim_{n\rightarrow\infty}\binom{n}{x}p^{x}(1-p)^{n-x}=\lim_{n\rightarrow\infty}\frac{n!}{x!(n-x)!}\cdot\left(\frac{\lambda}{n}\right)^{x}\left(1-\frac{\lambda}{n}\right)^{n-x}$$
+
+$$=\frac{\lambda^{x}}{x!}\lim_{n\rightarrow\infty}\frac{n!}{(n-x)!}\cdot\frac{1}{n^{x}}\cdot\left(1-\frac{\lambda}{n}\right)^{n}\left(1-\frac{\lambda}{n}\right)^{-x}$$
+
+------------------------------------------------------------------------
+
+$$=\frac{\lambda^{x}e^{-\lambda}}{x!}\lim_{n\rightarrow\infty}\frac{n(n-1)(n-2)\cdot\cdot\cdot(n-x+1)(n-x)!}{(n-x)!}\cdot\frac{1}{n^{x}}\cdot\left(1-\frac{\lambda}{n}\right)^{-x}$$
+
+$$=\frac{\lambda^{x}e^{-\lambda}}{x!}\lim_{n\rightarrow\infty}\frac{n(n-1)(n-2)\cdot\cdot\cdot(n-x+1)}{n\cdot n\cdot n\cdot\cdot\cdot n}\cdot\left(1-\frac{\lambda}{n}\right)^{-x}$$
+
+$$=\frac{\lambda^{x}e^{-\lambda}}{x!}\lim_{n\rightarrow\infty}1\cdot\left(1-\frac{1}{n}\right)\cdot\left(1-\frac{2}{n}\right)\cdot\cdot\cdot\left(1-\frac{x-1}{n}\right)\cdot\left(1-\frac{\lambda}{n}\right)^{-x}$$
+
+$$=\frac{\lambda^{x}e^{-\lambda}}{x!}\cdot1\cdot1\cdot\cdot\cdot1$$
+
+$$=\frac{\lambda^{x}e^{-\lambda}}{x!}$$
+
+------------------------------------------------------------------------
+
+**Ejemplo 7.18.**
+
+Si se sabe que la probabilidad de que un individuo sufra una reacción adversa a un determinado fármaco es de 0,001, determine la probabilidad de que, de 2000 individuos:
+
+-   Exactamente tres individuos sufran una reacción adversa.
+
+-   Más de dos individuos sufran una reacción adversa.
+
+**Solución:**
+
+a)  Sea X el número de individuos que sufren una reacción adversa. Entonces $X\sim Bin(2000;0.001)$. Como n es grande y p es pequeño, se puede utilizar la aproximación de Poisson (teorema 7.12) con $\lambda=np=2$, por lo que la probabilidad de que exactamente tres individuos sufran una reacción adversa es de:
+
+$$\small P(X=3)=\frac{2^{3}\cdot e^{-2}}{3!}\approx0,18$$
+
+Existe, aproximadamente un 18% de probabilidad de que exactamente tres individuos de los 2000 sufran una reacción adversa.
+
+------------------------------------------------------------------------
+
+b)  Acerca de la probabilidad de que más de dos individuos sufran una reacción adversa: 
+
+$$P(Y>2)=1-P(Y\le2)$$
+
+$$=1-P(Y=0)-P(Y=1)-P(Y=2)$$
+
+$$=1-5e^{-2}$$
+
+$$\approx0,323$$
+
+De modo que existe aproximadamente un 32,3% de probabilidades de que más de dos personas presenten una reacción adversa.
+
+------------------------------------------------------------------------
+
+### Ejercicios
+
+1.  Se sabe que un 4 % de los libros empastados en una librería tienen encuadernaciones defectuosas. Si se cuenta con una muestra de 100 libros, calcule la probabilidad de que:
+    -   Exactamente 3 libros estén defectuosos
+
+    -   A lo sumo 10 libros estén defectuosos
+
+    -   Más de 2 pero menos de 8 libros estén defectuosos.
+
+    -   3 o 5 libros estén defectuosos.
+    
+2.  Una compañía de seguros de vida asegura a 5000 hombres trabajadores de 42 años de edad en una mina de carbón.  Si los estudios actuales muestran que la probabilidad de que un hombre de 42 años muera debido al trabajo en las minas en un cierto año es de 0.001. Calcule la probabilidad de que la compañía pague una póliza de seguros al menos a 4 viudas de 4 hombres fallecidos en las minas.
+
+------------------------------------------------------------------------
+
+## Aproximación Hipergeométrica por medio de la binomial
+
+**Teorema 7.11.**
+
+Si X es una variable aleatoria discreta tal que $X\sim HG(N,K,n)$ para la cual $N\rightarrow\infty$ y $p\rightarrow\frac{K}{N}$ permanece constante, entonces:
+
+$$\lim_{N\rightarrow\infty}\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}=\binom{n}{x}p^{x}(1-p)^{n-x}$$
+
+**Demostración:**
+
+$$=\lim_{N\rightarrow\infty}\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}$$
+
+$$=\lim_{N\rightarrow\infty}\frac{K!}{x!(K-x)!}\cdot\frac{(N-K)!}{(n-x)!(N-K-n+x)!}\cdot\frac{n!(N-n)!}{N!}$$
+
+------------------------------------------------------------------------
+
+$$\tiny =\lim_{N\rightarrow\infty}\frac{n!}{x!(n-x)!}\cdot\frac{K(K-1)\cdot\cdot\cdot(K-x+1)}{(N-K-n+x)!}\cdot\frac{(N-K)(N-K-1)\cdot\cdot\cdot(N-K-n+x+1)(N-K-n+x)!}{N(N-1)(N-2)\cdot\cdot\cdot(N-n+1)(N-n)!}\cdot(N-n)!$$
+
+$$\tiny =\binom{n}{x}\lim_{N\rightarrow\infty}\frac{K(K-1)(K-2)\cdot\cdot\cdot(K-x+1)\cdot(N-K)(N-K-1)\cdot\cdot\cdot(N-K-n-x+1)}{N(N-1)(N-2)\cdot\cdot\cdot(N-x+1)\cdot(N-x)(N-x-1)(N-x-2)\cdot\cdot\cdot(N-x-n+1)}$$
+
+$$\tiny =\binom{n}{x}\lim_{N\rightarrow\infty}\left(\frac{K}{N}\cdot\frac{K-1}{N-1}\cdot\frac{K-2}{N-2}\cdot\cdot\cdot\frac{K-(x-1)}{N-(x-1)}\right)\cdot\left(\frac{N-K}{N-x}\cdot\frac{N-K-1}{N-x-1}\cdot\frac{N-K-2}{N-x-2}\cdot\cdot\cdot\frac{N-K-(n-x-1)}{N-x-(n-x-1)}\right)$$
+
+$$\approx\binom{n}{x}p^{x}\cdot(1-p)^{n-x}$$
+
+------------------------------------------------------------------------
+
+**Ejemplo 7.20.** : En un lote de $\small N=100$ componentes electrónicos, hay 40 defectuosos. Sea X el número de componentes defectuosos en una muestra aleatoria de tamaño 20. Encuentre $\small P(X=10)$ mediante la distribución de probabilidad hipergeométrica, y compárela con el resultado obtenido al emplear la distribución de probabilidad binomial.
+
+**Solución:**
+
+Con la distribución de probabilidad hipergeométrica:
+
+$$\small P(X=10)=\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}=\frac{\binom{40}{10}\binom{100-40}{20-10}}{\binom{100}{20}}\approx0,1192$$
+
+Con la distribución de probabilidad binomial, para la cual $\small p=\frac{K}{N}=\frac{40}{100}=0,4$:
+
+$$\small P(X=10)=\binom{20}{10}(0,4)^{10}(0,6)^{20-10}=\frac{20!}{10!10!}(0,4)^{10}(0,6)^{10}\approx0,117$$
+
+Se concluye que $\small N=100$ es lo suficientemente grande para obtener una buena aproximación de $\small P(X=10)$ mediante la distribución binomial.
+
+------------------------------------------------------------------------
+
+### Ejercicio
+
+En la biblioteca de un profesor hay 150 libros: 90 de estadística y 60 de matemáticas. Se escogen 5 libros al azar para regalárselos a un amigo.  ¿Cuál es la probabilidad de que el amigo reciba dos libros de estadística?

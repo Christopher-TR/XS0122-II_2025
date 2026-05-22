@@ -670,7 +670,9 @@ $$\small P(Y \ge 4) = P(Y = 4) + P(Y = 5)$$ $$\small P(Y \ge 4) = \binom{5}{4}(0
 
 Por lo tanto, la probabilidad de que la máquina esté en reparación menos del 30% del tiempo es **0,03078**. (Tarea validar usando integración).
 
-## El Teorema de De Moivre-Laplace
+## Aproximación de la Binomial por medio de la Normal:
+
+#### El Teorema de De Moivre-Laplace
 
 El Teorema de De Moivre-Laplace establece que, bajo ciertas condiciones, la distribución de una variable aleatoria binomial puede aproximarse a una distribución normal.
 
@@ -680,11 +682,15 @@ Cuando el tamaño de la muestra ($n$) es suficientemente grande, la función de 
 
 ------------------------------------------------------------------------
 
-## El Teorema de De Moivre-Laplace
+## Aproximación de la Binomial por medio de la Normal:
+
+#### El Teorema de De Moivre-Laplace
 
 Esto nos permite aproximar las probabilidades estandarizando la variable. La probabilidad original se transforma en una probabilidad sobre la distribución normal estándar ($Z$): $$P(np + a\sqrt{npq} \le X \le np + b\sqrt{npq}) = P\left(a \le \frac{X-np}{\sqrt{npq}} \le b\right)$$ $$P(a \le Z \le b) \approx \int_{a}^{b} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}z^2} dz$$
 
-## La Corrección por Continuidad
+## Aproximación de la Binomial por medio de la Normal:
+
+#### La Corrección por Continuidad
 
 Dado que la distribución binomial es discreta (toma valores enteros) y la normal es continua, la aproximación mejora de forma sustancial si aplicamos una **corrección por continuidad** sumando o restando $0,5$ a los límites del intervalo.
 

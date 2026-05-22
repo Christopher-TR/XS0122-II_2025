@@ -686,18 +686,21 @@ n = \alpha + \beta - 1, \quad p = x.
 <p><span class="math display">\[\small P(Y \ge 4) = P(Y = 4) + P(Y = 5)\]</span> <span class="math display">\[\small P(Y \ge 4) = \binom{5}{4}(0,3)^4(1 - 0,3)^{5 - 4} + \binom{5}{5}(0,3)^5(1 - 0,3)^{5 - 5}\]</span> <span class="math display">\[\small P(Y \ge 4) = 5(0,0081)(0,7) + 1(0,00243)(1) = 0,03078\]</span></p>
 <p>Por lo tanto, la probabilidad de que la máquina esté en reparación menos del 30% del tiempo es <strong>0,03078</strong>. (Tarea validar usando integración).</p>
 </section>
-<section id="el-teorema-de-de-moivre-laplace" class="slide level2">
-<h2>El Teorema de De Moivre-Laplace</h2>
+<section id="aproximación-de-la-binomial-por-medio-de-la-normal" class="slide level2">
+<h2>Aproximación de la Binomial por medio de la Normal:</h2>
+<h4 id="el-teorema-de-de-moivre-laplace">El Teorema de De Moivre-Laplace</h4>
 <p>El Teorema de De Moivre-Laplace establece que, bajo ciertas condiciones, la distribución de una variable aleatoria binomial puede aproximarse a una distribución normal.</p>
 <p>Sea <span class="math inline">\(X \sim Bin(n,p)\)</span>, cuya función de probabilidad exacta es: <span class="math display">\[f(x) = \binom{n}{x} p^{x} (1-p)^{n-x}\]</span></p>
 <p>Cuando el tamaño de la muestra (<span class="math inline">\(n\)</span>) es suficientemente grande, la función de probabilidad converge a la campana de Gauss: <span class="math display">\[\lim_{n \to \infty} f(x) = \frac{1}{\sqrt{npq}\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-np}{\sqrt{npq}}\right)^2}\]</span></p>
 </section>
-<section id="el-teorema-de-de-moivre-laplace-1" class="slide level2">
-<h2>El Teorema de De Moivre-Laplace</h2>
+<section id="aproximación-de-la-binomial-por-medio-de-la-normal-1" class="slide level2">
+<h2>Aproximación de la Binomial por medio de la Normal:</h2>
+<h4 id="el-teorema-de-de-moivre-laplace-1">El Teorema de De Moivre-Laplace</h4>
 <p>Esto nos permite aproximar las probabilidades estandarizando la variable. La probabilidad original se transforma en una probabilidad sobre la distribución normal estándar (<span class="math inline">\(Z\)</span>): <span class="math display">\[P(np + a\sqrt{npq} \le X \le np + b\sqrt{npq}) = P\left(a \le \frac{X-np}{\sqrt{npq}} \le b\right)\]</span> <span class="math display">\[P(a \le Z \le b) \approx \int_{a}^{b} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}z^2} dz\]</span></p>
 </section>
-<section id="la-corrección-por-continuidad" class="slide level2">
-<h2>La Corrección por Continuidad</h2>
+<section id="aproximación-de-la-binomial-por-medio-de-la-normal-2" class="slide level2">
+<h2>Aproximación de la Binomial por medio de la Normal:</h2>
+<h4 id="la-corrección-por-continuidad">La Corrección por Continuidad</h4>
 <p>Dado que la distribución binomial es discreta (toma valores enteros) y la normal es continua, la aproximación mejora de forma sustancial si aplicamos una <strong>corrección por continuidad</strong> sumando o restando <span class="math inline">\(0,5\)</span> a los límites del intervalo.</p>
 <p><strong>Condiciones para una buena aproximación:</strong> Para utilizar este método, generalmente se requiere que tanto el número de éxitos como el de fracasos esperados sean mayores o iguales a 5: * <span class="math inline">\(np \ge 5\)</span> * <span class="math inline">\(nq \ge 5\)</span></p>
 <p>Si <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span> son números enteros, la fórmula aproximada con la corrección aplicada es: <span class="math display">\[P(c \le X \le d) \approx \Phi\left(\frac{d + 0,5 - np}{\sqrt{npq}}\right) - \Phi\left(\frac{c - 0,5 - np}{\sqrt{npq}}\right)\]</span> <em>(Donde</em> <span class="math inline">\(\Phi\)</span> representa la función de distribución acumulada de la Normal Estándar).</p>

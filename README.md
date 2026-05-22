@@ -25,8 +25,8 @@ estudiante](https://christopher-tr.github.io/XS0122-II_2025/XS-0122%20carta%20al
 | Distribuciones Discretas                                                              | [Clase 8](XS-0122_08.html)    |
 | Aproximaciones Discretas                                                              | [Clase 9](XS-0122_08_2.html)  |
 | Repaso de Integración                                                                 | [Clase 10](XS-0122_09.html)   |
-| Distribuciones Continuas                                                              | [Clase 11](XS-0122_10.html)   |
-| Distribuciones Continuas                                                              | [Clase 12](XS-0122_11.html)   |
+| Distrib Continuas                                                                     | [Clase 11](XS-0122_10.html)   |
+| Distrib Continuas, Relación Beta-Binomial y Aprox Binomial por medio de la Normal     | [Clase 12](XS-0122_11.html)   |
 | Generatriz de Momentos y Generatrices de momentos                                     | [Clase 13](XS-0122_12.html)   |
 | Funciones de Verosimilitud                                                            | [Clase 14](XS-0122_13.html) |
 | Aproximaciones, Markov y Chebyshev                                                    | Clase 14 |

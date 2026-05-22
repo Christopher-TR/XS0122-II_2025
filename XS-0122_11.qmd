@@ -21,17 +21,11 @@ lang: es  # español
 
 ## Distribución Gamma
 
--   Algunas variables aleatorias son siempre no negativas y por varias razones dan distribuciones de datos que están sesgadas (no simétricas) a la derecha.
+Algunas variables aleatorias son siempre no negativas y presentan distribuciones sesgadas a la derecha (casi toda el área bajo la curva está cerca del origen y decae gradualmente).
 
--   Esto es, casi toda el área bajo la función de densidad está ubicada cerca del origen y lafunción de densidad cae gradualmente conforme y aumenta.
+Imagine un proceso de Poisson, por ejemplo, el número de carros que entran al parqueo de Ciencias Económicas en una hora (con tasa $\lambda$). El tiempo que transcurre entre una llegada y la siguiente se modela con una distribución **Exponencial** *(Caso particular de la gamma)*.
 
--   Imagine una variable aleatoria distribuida como Poisson con parámetro $\lambda$, por ejemplo, el número de correos electrónicos que llegan a su bandeja de entrada en una semana, o el número de carros que entran al parqueo de ciencias económicas en un día. Ahora, hay una manera alternativa de definir el proceso: pensar en el tiempo que pasa entre lallegada de un correo (o un carro) y otro. Este tiempo se puede definir como una variable aleatoria i.i.d. Exponencial con parámetro $\lambda$.
-
-## Distribución Gamma
-
--   Entonces, la suma de $n$ de estos tiempos nos daría el tiempo para la $n$ -ésima llegada (el tiempo para que el n-ésimo correo llegue o para que el $n$-ésimo carro llegue), y como veremos más adelante, la suma de v.a. que son iid Exponenciales es una v.a. distribuida como $Gamma(n, \lambda)$.
-
--   Estos intervalos de tiempo entre eventos (correos, carros, etc.) poseen una distribución de frecuencia sesgada, al igual que los intervalos de llegada en una fila de espera en las cajas de un supermercado (esto es, la fila de espera para llegar a la caja a pagar). La población asociada con estas variables aleatorias posee con frecuencia funciones de densidad que son modeladas de manera adecuada por una función de densidad $Gamma(n, \lambda)$.
+Si nos interesa el tiempo total que transcurre hasta que lleguen $n$ carros, sumamos esos tiempos exponenciales independientes. Esa suma sigue una **Distribución Gamma**, denotada como $Gamma(\alpha, \beta)$.
 
 ## Distribución Gamma
 
@@ -53,7 +47,7 @@ $$
 
 ## Distribución Gamma
 
-**Importante:** la *Función Gamma* **NO** es lo mismo que la *Función de Densidad Gamma* (aunque esta última incluye a la primera).
+**Importante:** la *Función Gamma* **NO** es lo mismo que la *Función de Densidad Gamma*.
 
 -   En inglés: <http://mathworld.wolfram.com/GammaFunction.html>\
 -   En español: <https://es.wikipedia.org/wiki/Funci%C3%B3n_gamma>
@@ -292,28 +286,6 @@ ggplot(df, aes(x = vargamma)) +
 
 ## Distribución Gamma
 
-### **Caso Especial**
-
-Cuando $\alpha$ es un entero y $\alpha \ne 1$ (una exponencial), podemos expresar la función de distribución de una variable aleatoria con distribución Gamma como una **suma de ciertas probabilidades de Poisson**.
-
-Si $\alpha$ no es entero y $0 < a < b < \infty$, entonces esta integral **no tiene una expresión cerrada**:
-
-$$
-\int_a^b 
-\dfrac{x^{\alpha - 1} e^{-x/\beta}}{\beta^{\alpha} \Gamma(\alpha)}\, dx
-$$
-
-Por lo tanto, se requiere **software estadístico** para evaluar $F_X(x)$.
-
-### **Parámetros**
-
-La distribución Gamma tiene dos parámetros:
-
--   $\alpha$ (*shape* = forma)\
--   $\beta$ (*scale* = escala)
-
-## Distribución Gamma
-
 Si $X$ es una variable aleatoria distribuida como **Gamma** con parámetros $\alpha$ y $\beta$, entonces:
 
 $$
@@ -370,9 +342,41 @@ Var(X) = E(X^2) - [E(X)]^2
        = \alpha\beta^2
 $$
 
-## Dos casos especiales de la Gamma
+## Distribución Exponencial (Caso Especial de la Gamma)
 
-#### **Chi Cuadrada**
+Se dice que una variable aleatoria $X$ tiene una distribución exponencial con parámetro $\beta > 0$ si y sólo si la función de densidad de $X$ es:
+
+$$ f_X(x) = \begin{cases} \dfrac{1}{\beta} e^{-x/\beta}, & 0 \le x < \infty, \\[6pt] 0, & \text{en cualquier otro punto.} \end{cases} $$
+
+***La función de densidad exponencial a menudo es de ayuda para modelar la vida útil de componentes electrónicos.***
+
+#### **Esperanza y Varianza de una Exponencial**
+
+Si $X$ es una variable aleatoria exponencial con parámetro $\lambda$ entonces:
+
+$$ \mu = E(X) = \lambda,  \quad \sigma^2 = V(X) = \lambda^2 $$
+
+**Prueba:** Ejercicio.
+
+## Ejercicio
+
+Suponga que $X$ tiene una función de densidad de probabilidad **exponencial**. Demuestre que, si $a > 0$ y $b > 0$,
+
+$$\small P(X > a + b \mid X > a) = P(X > b) $$
+
+**Solución**
+
+$$\small P(X > a + b \mid X > a)  = \dfrac{P(X > a + b, X > a)}{P(X > a)}  = \dfrac{P(X > a + b)}{P(X > a)} $$
+
+$$\small P(X > a + b) = \int_{a + b}^{\infty} \dfrac{1}{\beta} e^{-x/\beta}\,dx = e^{-(a+b)/\beta} $$
+
+$$\small P(X > a) = \int_{a}^{\infty} \dfrac{1}{\beta} e^{-x/\beta}\,dx = e^{-a/\beta} $$
+
+$$\small P(X > a + b \mid X > a) =  \dfrac{e^{-(a+b)/\beta}}{e^{-a/\beta}} = e^{-b/\beta} = P(X > b) $$
+
+$\tiny \text{Esta propiedad se conoce como la propiedad sin memoria ya que la probabilidad de que el evento ocurra después de un tiempo adicional $b$ no depende del tiempo transcurrido $a$.}$
+
+## Distribución Chi Cuadrada (Caso Especial de la Gamma)
 
 Sea $\nu$ un entero positivo. Se dice que una variable aleatoria $X$ tiene distribución **Ji-cuadrada** $\chi^2$ con $\nu$ grados de libertad **si y solo si**\
 $X$ es una variable aleatoria con distribución **Gamma** con parámetros $\alpha = \nu/2$ y $\beta = 2$.
@@ -389,62 +393,7 @@ $$
 
 **Prueba:** Ejercicio.
 
-!!En casi todos los textos de estadística se pueden ver tablas que dan probabilidades asociadas con distribuciones $\chi^2$. Además si $X$ tiene una distribución $Gamma(a = \frac{n}{2}, \beta)$, para algún entero $n$ entonces $Y = \frac{2X}{\beta}$ tiene una distribución $\chi^2$ con $n$ grados de libertad.
-
-## Dos casos especiales de la Gamma
-
-#### **Exponencial:**
-
-Se dice que una variable aleatoria $X$ tiene una distribución exponencial con parámetro $\beta > 0$ si y sólo si la función de densidad de $X$ es:
-
-$$
-f_X(x) =
-\begin{cases}
-\dfrac{1}{\beta} e^{-x/\beta}, & 0 \le x < \infty, \\[6pt]
-0, & \text{en cualquier otro punto.}
-\end{cases}
-$$
-
-!!La función de densidad exponencial a menudo es de ayuda para modelar la vida útil de componentes electrónicos.
-
-#### **Esperanza y Varianza de una Exponencial**
-
-Si $X$ es una variable aleatoria exponencial con parámetro $\lambda$ entonces:
-
-$$ \mu = E(X) = \lambda,  \quad \sigma^2 = V(X) = \lambda^2 $$
-
-**Prueba:** Ejercicio.
-
-## Ejercicio
-
-Suponga que $X$ tiene una función de densidad de probabilidad **exponencial**. Demuestre que, si $a > 0$ y $b > 0$,
-
-$$\small
-P(X > a + b \mid X > a) = P(X > b)
-$$
-
-**Solución**
-
-$$\small
-P(X > a + b \mid X > a) 
-= \dfrac{P(X > a + b, X > a)}{P(X > a)} 
-= \dfrac{P(X > a + b)}{P(X > a)}
-$$
-
-$$\small
-P(X > a + b) = \int_{a + b}^{\infty} \dfrac{1}{\beta} e^{-x/\beta}\,dx = e^{-(a+b)/\beta}
-$$
-
-$$\small
-P(X > a) = \int_{a}^{\infty} \dfrac{1}{\beta} e^{-x/\beta}\,dx = e^{-a/\beta}
-$$
-
-$$\small
-P(X > a + b \mid X > a) = 
-\dfrac{e^{-(a+b)/\beta}}{e^{-a/\beta}} = e^{-b/\beta} = P(X > b)
-$$
-
-$\tiny \text{Esta propiedad se conoce como la propiedad sin memoria ya que la probabilidad de que el evento ocurra después de un tiempo adicional $b$ no depende del tiempo transcurrido $a$.}$
+En casi todos los textos de estadística se pueden ver tablas que dan probabilidades asociadas con distribuciones $\chi^2$. Además si $X$ tiene una distribución $Gamma(a = \frac{n}{2}, \beta)$, para algún entero $n$ entonces $Y = \frac{2X}{\beta}$ tiene una distribución $\chi^2$ con $n$ grados de libertad.
 
 ## Ejercicios
 
@@ -474,6 +423,37 @@ $$
 ```{r, echo=T}
 pexp(3,1/2.4)-pexp(2,1/2.4)
 ```
+
+## Ejercicio:
+
+Suponga que el tiempo (en minutos) que tarda un estudiante en resolver un problema de un quiz de estadística sigue una distribución Exponencial con media de 5 minutos ($\beta=5$). Si un estudiante debe resolver 3 problemas independientes, ¿cuál es la probabilidad de que termine el quiz en menos de 10 minutos?
+
+**Solución:**
+
+El tiempo total $X$ es la suma de 3 exponenciales, por lo que $X \sim Gamma(\alpha=3, \beta=5)$.
+
+Calculamos $P(X < 10)$:
+
+```{r, echo=TRUE}
+pgamma(10, shape = 3, scale = 5)
+```
+
+## Distribución Gamma
+
+Cuando $\alpha$ es un entero y $\alpha \ne 1$ (una exponencial), podemos expresar la función de distribución de una variable aleatoria con distribución Gamma como una **suma de ciertas probabilidades de Poisson**.
+
+Si $\alpha$ no es entero y $0 < a < b < \infty$, entonces esta integral **no tiene una expresión cerrada**:
+
+$$ \int_a^b  \dfrac{x^{\alpha - 1} e^{-x/\beta}}{\beta^{\alpha} \Gamma(\alpha)}\, dx $$
+
+Por lo tanto, se requiere **software estadístico** para evaluar $F_X(x)$.
+
+### **Parámetros**
+
+La distribución Gamma tiene dos parámetros:
+
+-   $\alpha$ (*shape* = forma)
+-   $\beta$ (*scale* = escala)
 
 ## Distribución Beta
 
@@ -599,25 +579,6 @@ $$
 
 ## Distribución Beta
 
-#### **Relación con la distribución binomial**
-
-Cuando $\alpha$ y $\beta$ son **enteros positivos**, la función $I_x(\alpha, \beta)$ está relacionada con la **función de probabilidad binomial**. Es posible usar integración por partes para demostrar que, si $0 < x < 1$ y $\alpha, \beta$ son enteros, entonces:
-
-$$
-F(x) = \int_{0}^{x} \dfrac{t^{\alpha - 1}(1 - t)^{\beta - 1}}{B(\alpha, \beta)}\,dt 
-     = \sum_{i = \alpha}^{n} \binom{n}{i} x^{i}(1 - x)^{n - i},
-$$
-
-donde: $n = \alpha + \beta - 1$
-
-La suma del lado derecho representa la **suma de probabilidades** asociadas a una variable aleatoria **binomial** con:
-
-$$
-n = \alpha + \beta - 1, \quad p = x.
-$$
-
-## Distribución Beta
-
 Si $X$ es una variable aleatoria **Beta** con parámetros $\alpha > 0$ y $\beta > 0$, entonces:
 
 $$\small 
@@ -650,6 +611,116 @@ Por tanto:
 $$\small
 E(X) = \dfrac{\alpha}{\alpha + \beta}
 $$
+
+------------------------------------------------------------------------
+
+### Ejercicio
+
+La proporción de impurezas en un lote de un producto químico particular es una variable aleatoria $X$ que se modela mediante una distribución Beta con parámetros $\alpha = 3$ y $\beta = 2$.
+
+**a)** Calcule el valor esperado y la varianza de la proporción de impurezas en un lote.
+
+**b)** Plantee la integral necesaria para calcular la probabilidad de que un lote tenga más de un 40% de impurezas.
+
+------------------------------------------------------------------------
+
+**Solución a):** Si $\small X \sim Beta(\alpha, \beta)$: $$\small E(X) = \frac{\alpha}{\alpha + \beta} = \frac{3}{3 + 2}  = 0,60$$ $$\small Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} = \frac{3 \cdot 2}{(3 + 2)^2 (3 + 2 + 1)} =  0,04$$
+
+El lote tiene en promedio un 60% de impurezas.
+
+**Solución b):** Solicitan $\small P(X > 0,4)$. Se tiene que la función de densidad es $\small f(x) = \frac{x^{3-1}(1-x)^{2-1}}{B(3,2)}$ para $\small 0 \le x \le 1$. Por ende:
+
+$$\small P(X > 0,4) = \int_{0,4}^{1} \frac{x^2(1-x)^1}{B(3,2)} \,dx = 0.8208$$ ***Nota:*** $\small B(3,2) = \frac{\Gamma(3)\Gamma(2)}{\Gamma(5)} = \frac{2! \cdot 1!}{4!} = \frac{2}{24} = \frac{1}{12}$
+
+## Relación entre la distribución Beta y la Binomial
+
+Cuado $\alpha$ y $\beta$ son **enteros positivos**, la función $I_x(\alpha, \beta)$ está relacionada con la **función de probabilidad binomial**. Es posible usar integración por partes para demostrar que, si $0 < x < 1$ y $\alpha, \beta$ son enteros, entonces:
+
+$$
+F(x) = \int_{0}^{x} \dfrac{t^{\alpha - 1}(1 - t)^{\beta - 1}}{B(\alpha, \beta)}\,dt 
+     = \sum_{i = \alpha}^{n} \binom{n}{i} x^{i}(1 - x)^{n - i},
+$$
+
+donde: $n = \alpha + \beta - 1$
+
+La suma del lado derecho representa la **suma de probabilidades** asociadas a una variable aleatoria **binomial** con:
+
+$$
+n = \alpha + \beta - 1, \quad p = x.
+$$
+
+## Ejercicio:
+
+Suponga que la proporción del tiempo que una máquina empaquetadora industrial está en reparación durante una semana de trabajo es una variable aleatoria $\small X \sim Beta(4, 2)$.
+
+Utilizando la relación con la distribución Binomial, calcule la probabilidad de que la máquina esté en reparación **menos del 30%** del tiempo, es decir, $P(X \le 0,3)$. *(Nota: Realice el cálculo analítico sin integrar y luego valide integrando o usando la función pbeta).*
+
+------------------------------------------------------------------------
+
+Se tiene que: $\small X \sim Beta(\alpha = 4, \beta = 2)$\
+$\small n = \alpha + \beta - 1 =  5$\
+$\small p = x = 0,3$.\
+$\small Y \sim Binomial(n=5, p=0,3)$.
+
+Entonces La integral acumulada de la Beta es igual a la suma de probabilidades binomiales desde $\small \alpha$ hasta $\small n$.
+
+$$\small P(X \le 0,3) = \sum_{i = \alpha }^{n} \binom{n}{i} x^{i}(1 - x)^{n - i} = \sum_{i = 4}^{5} \binom{5}{i} 0.3^{i}(1 - 0.3)^{5 - i} = P(Y \ge 4)$$
+
+$$\small P(Y \ge 4) = P(Y = 4) + P(Y = 5)$$ $$\small P(Y \ge 4) = \binom{5}{4}(0,3)^4(1 - 0,3)^{5 - 4} + \binom{5}{5}(0,3)^5(1 - 0,3)^{5 - 5}$$ $$\small P(Y \ge 4) = 5(0,0081)(0,7) + 1(0,00243)(1) = 0,03078$$
+
+Por lo tanto, la probabilidad de que la máquina esté en reparación menos del 30% del tiempo es **0,03078**. (Tarea validar usando integración).
+
+## El Teorema de De Moivre-Laplace
+
+El Teorema de De Moivre-Laplace establece que, bajo ciertas condiciones, la distribución de una variable aleatoria binomial puede aproximarse a una distribución normal.
+
+Sea $X \sim Bin(n,p)$, cuya función de probabilidad exacta es: $$f(x) = \binom{n}{x} p^{x} (1-p)^{n-x}$$
+
+Cuando el tamaño de la muestra ($n$) es suficientemente grande, la función de probabilidad converge a la campana de Gauss: $$\lim_{n \to \infty} f(x) = \frac{1}{\sqrt{npq}\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-np}{\sqrt{npq}}\right)^2}$$
+
+------------------------------------------------------------------------
+
+## El Teorema de De Moivre-Laplace
+
+Esto nos permite aproximar las probabilidades estandarizando la variable. La probabilidad original se transforma en una probabilidad sobre la distribución normal estándar ($Z$): $$P(np + a\sqrt{npq} \le X \le np + b\sqrt{npq}) = P\left(a \le \frac{X-np}{\sqrt{npq}} \le b\right)$$ $$P(a \le Z \le b) \approx \int_{a}^{b} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}z^2} dz$$
+
+## La Corrección por Continuidad
+
+Dado que la distribución binomial es discreta (toma valores enteros) y la normal es continua, la aproximación mejora de forma sustancial si aplicamos una **corrección por continuidad** sumando o restando $0,5$ a los límites del intervalo.
+
+**Condiciones para una buena aproximación:** Para utilizar este método, generalmente se requiere que tanto el número de éxitos como el de fracasos esperados sean mayores o iguales a 5: \* $np \ge 5$ \* $nq \ge 5$
+
+Si $c$ y $d$ son números enteros, la fórmula aproximada con la corrección aplicada es: $$P(c \le X \le d) \approx \Phi\left(\frac{d + 0,5 - np}{\sqrt{npq}}\right) - \Phi\left(\frac{c - 0,5 - np}{\sqrt{npq}}\right)$$ *(Donde* $\Phi$ representa la función de distribución acumulada de la Normal Estándar).
+
+------------------------------------------------------------------------
+
+## Ejemplo:
+
+**Enunciado:** Un dado se tira 3000 veces. Calcular la probabilidad de que el número de unos $X$ sea mayor o igual a 480 y menor o igual a 530.
+
+**Tenemos:**
+
+$np = 3000 \cdot (1/6) = 500$ (Se cumple $np \ge 5$)\
+$nq = 3000 \cdot (5/6) = 2500$ (Se cumple $nq \ge 5$)\
+Media ($\mu$): $\mu = np = 500$\
+Desviación estándar ($\sigma$): $\sigma = \sqrt{npq} = \sqrt{3000 \cdot \frac{1}{6} \cdot \frac{5}{6}} \approx 20,41$
+
+**Entonces:**\
+$$\small P(480 \le X \le 530) \approx \Phi\left(\frac{530 + 0,5 - 500}{20,41}\right) - \Phi\left(\frac{480 - 0,5 - 500}{20,41}\right)$$ $$\small P(480 \le X \le 530) \approx \Phi(1,49) - \Phi(-1,004)$$ $$\small P(480 \le X \le 530) \approx 0,93189 - 0,15866 = 0,77323$$
+
+------------------------------------------------------------------------
+
+## Ejemplo:
+
+**Enunciado:** La confiabilidad de un fusible eléctrico es la probabilidad de que funcione adecuadamente al ser elegido al azar. Se probó una muestra de 1400 fusibles. Calcule la probabilidad aproximada de observar 27 o más fusibles **defectuosos**, suponiendo una confiabilidad de fábrica del 0,98.
+
+**Tenemos:**\
+$np = 1400 \cdot 0,02 = 28$ (Se cumple $np \ge 5$)\
+$nq = 1400 \cdot 0,98 = 1372$ (Se cumple $nq \ge 5$)\
+Media ($\mu$): $\mu = np = 28$\
+Desviación estándar ($\sigma$): $\sigma = \sqrt{npq} = \sqrt{1400 \cdot 0,02 \cdot 0,98} \approx 5,238$
+
+**Entonces:** $$\small P(X \ge 27) = 1 - P(X < 27) \approx 1 - \Phi\left(\frac{27 - 0,5 - 28}{5,238}\right)$$ $$\small P(X \ge 27) \approx 1 - \Phi(-0,286)$$ $$\small P(X \ge 27) \approx 1 - 0,387 = 0,613$$
 
 ## Ejercicios: (Libro Wackerly, Mendenhall - Capítulo 4)
 

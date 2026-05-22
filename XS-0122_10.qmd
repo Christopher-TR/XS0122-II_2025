@@ -288,7 +288,7 @@ Las áreas bajo la función de densidad normal correspondientes a $P(a \le Y \le
 $$
 P(a \le Y \le b)
 = \int_{a}^{b} \frac{1}{\sigma \sqrt{2\pi}}
-\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\,dx,
+\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\,dx,
 \qquad -\infty < a < b < \infty.
 $$
 

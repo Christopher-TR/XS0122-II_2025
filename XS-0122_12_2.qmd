@@ -1,0 +1,155 @@
+---
+title: "Función Generatriz de Probabilidad"
+subtitle: " [XS-0122 Modelos Probabilísticos II Semestre 2025](https://christopher-tr.github.io/XS0122-II_2025/)"
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+
+author:
+  - name: Christopher Torres Rojas
+    url: https://christopher-tr.github.io/
+    email: christopher.torres@ucr.ac.cr
+    affiliations: 
+    - name: Escuela de Estadística, Universidad de Costa Rica
+      url: https://www.estadistica.ucr.ac.cr/
+#date: last-modified
+lang: es  # español
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## ¿Qué vamos a discutir hoy?
+
+- Importancia de las variables aleatorias de valores enteros.
+- Definición de la Función Generatriz de Probabilidad (FGP).
+- Obtención de Momentos Factoriales.
+- Ejemplos: Distribución Geométrica y Binomial.
+
+## Introducción y Motivación
+
+Existen fenómenos donde la variable de interés $X$ solo toma valores en
+los enteros no negativos $\{0, 1, 2, \dots \}$.
+
+**Aplicaciones prácticas:**
+
+- **Teoría de Colas:** Modelar el número de personas en espera, esencial
+  para el diseño de estaciones de servicio, cajas de supermercado u
+  hospitales.
+- **Modelos de Crecimiento:** Crecimiento de poblaciones bacterianas o
+  el número de personas afectadas por una epidemia.
+
+[El estudio de estas variables se simplifica mediante el uso de
+funciones generatrices, las cuales "empaquetan" toda la distribución de
+probabilidad en una serie de potencias.]{style="font-size:70%;"}
+
+## Función Generatriz de Probabilidad
+
+#### **Definición (FGP)**
+
+Sea $X$ una variable aleatoria discreto, donde $P(X=x) = p_x$. La
+**función generatriz de probabilidad** $P(t)$ de $X$ se define como:
+
+$$P(t) = E(t^X) = p_0 + p_1 t + p_2 t^2 + \dots = \sum_{x=0}^{\infty} t^xP_x $$
+
+**Notas:** La serie es convergente para $\mid t \mid \leq 1$.
+
+**Unicidad:** Si conocemos $P(t)$, podemos recuperar cada $p_X$ de forma
+única, ya que $p_X$ es el coeficiente de $t^x$.
+
+**Observe que:** $P(1) = \sum_{x=0}^{\infty} p_x = 1$.
+
+## Obtención de Momentos Factoriales
+
+A partir de $P(t)$ es posible hallar los momentos de $X$. La $k$-ésima
+derivada de $P(t)$ respecto a $t$ evaluada en $t=1$ nos da el **k-ésimo
+momento factorial**:
+
+$$\mu_{(k)} = E[X(X-1)(X-2)\cdots(X-k+1)] = P^{(k)}(1)$$
+
+::: callout-note
+## Relación con la Media y Varianza
+
+- $E(Y) = P'(1)$
+- $Var(Y) = P''(1) + P'(1) - [P'(1)]^2$
+- ***Ojo, estos son momentos factoriales, no momentos al origen.***
+:::
+
+**Prueba: Ejercicio**
+
+## Ejemplo: Distribución Geométrica
+
+Sea $X \sim \text{Geométrica}(p)$ con $P(X=x) = pq^{x-1}$ para
+$x = 1, 2, \dots$ y $q=1-p$
+
+**Encuentre la FGP:**
+$$P(t) = E(t^X) = \sum_{x=1}^{\infty} t^x pq^{x-1} = pt \sum_{x=1}^{\infty} (qt)^{x-1}$$
+
+$$= pt \sum_{k=0}^{\infty} (qt)^{k}, \quad \tiny\text{cambio de índice};$$
+
+Como es una serie geométrica con razón $qt$:
+$$P(t) = \frac{pt}{1-qt} \quad \text{ para } t < 1/q$$
+
+## Ejemplo: Momentos de la Geométrica
+
+Utilizando $P(t)$ hallada anteriormente, calculemos $E(X)$.
+
+Derivamos respecto a $t$:
+$$P'(t) = \frac{p(1-qt) - pt(-q)}{(1-qt)^2} = \frac{p - pqt + pqt}{(1-qt)^2} = \frac{p}{(1-qt)^2}$$
+
+Evaluando en $t=1$:
+$$P'(1) = \frac{p}{(1-q)^2} = \frac{p}{p^2} = \frac{1}{p}$$
+
+Por lo tanto, $E(X) = 1/p$.
+
+## Comparación entre FGP y la FGM
+
+**FGP -** $P(t)$:
+
+Solo para variables discretas. \
+Momento factoriales. \
+Útil para deducir la distribución de sumas de variables.\
+
+**FGM -** $m(t)$ :\
+\
+General para cualquier variable. \
+Momentos al origen $E(X^k)$. \
+Relación: $P(e^t) = m(t)$.
+
+[A menudo es más fácil hallar los momentos de una variable discreta
+usando $P(t)$ que mediante $m(t)$ o la definición directa de
+esperanza.]{style="font-size:75%;"}
+
+## Ejercicios
+
+**1. Distribución Binomial**: Sea $X \sim \text{Binomial}(n, p)$. \
+\
+Demuestre que $P(t) = (q + pt)^n$. \
+\
+Use $P(t)$ para hallar $E(X)$.
+
+**2. Distribución Poisson**: Sea $X \sim \text{Poisson}(\lambda)$.\
+\
+Encuentre $P(t)$. Sugerencia: use la serie de Taylor para $e^x$. \
+\
+Halle $E(X)$ y $V(X)$ usando derivadas.
+
+**3. Momentos de orden superior**:
+
+A partir de la $P(t)$ de la distribución Poisson, encuentre el tercer
+momento factorial $E[X(X-1)(X-2)]$ y utilícelo para hallar $E(X^3)$.
+
+## Resumen de Propiedades
+
+Suponga que $P(t)$ es la FGP de $X$.
+
+| Objetivo                    | Operación                     |
+|:----------------------------|:------------------------------|
+| Probabilidad $P(X=0)$       | Evaluar $P(0)$                |
+| Probabilidad $P(X=k)$       | $\frac{1}{k!} P^{(k)}(0)$     |
+| Esperanza $E(X)$            | $P'(1)$                       |
+| Segundo Momento Factorial   | $P''(1)$                      |
+| Suma de $X_1 + X_2$ (indep) | $P_{Y_1}(t) \cdot P_{Y_2}(t)$ |

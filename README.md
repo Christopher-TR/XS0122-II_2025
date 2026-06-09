@@ -28,5 +28,6 @@ estudiante](https://christopher-tr.github.io/XS0122-II_2025/XS-0122%20carta%20al
 | Distrib Continuas                                                                     | [Clase 11](XS-0122_10.html)   |
 | Distrib Continuas, Relación Beta-Binomial y Aprox Binomial por medio de la Normal     | [Clase 12](XS-0122_11.html)   |
 | Generatriz de Momentos y Generatrices de momentos                                     | [Clase 13](XS-0122_12.html)   |
-| Funciones de Verosimilitud                                                            | [Clase 14](XS-0122_13.html) |
-| Aproximaciones, Markov y Chebyshev                                                    | Clase 14 |
+| Funciones Generatriz de Probabilidad                                                  | [Clase 14](XS-0122_12_2.html) |
+| Funciones de Verosimilitud                                                            | [Clase 15](XS-0122_13.html) |
+| Aproximaciones, Markov y Chebyshev                                                    | Clase 16 |
